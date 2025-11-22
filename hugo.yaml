@@ -75,7 +75,7 @@ params:
             src: img/me.jpg
 
     article:
-        math: false
+        math: true
         toc: true
         readingTime: true
         license:
@@ -241,6 +241,7 @@ related:
 markup:
     goldmark:
         extensions:
+            mark: true
             passthrough:
                 enable: true
                 delimiters:
