@@ -7,7 +7,27 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Mhhhhhh</copyright>
-        <lastBuildDate>Sat, 22 Nov 2025 21:46:43 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 23 Nov 2025 02:00:54 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Myself_talk</title>
+        <link>https://example.com/p/myself_talk/</link>
+        <pubDate>Sun, 23 Nov 2025 02:00:54 +0800</pubDate>
+        
+        <guid>https://example.com/p/myself_talk/</guid>
+        <description>&lt;p&gt;是的没错 经过千辛万苦 我终于搭建起了我自己的博客 接下来我将做一些测试&lt;/p&gt;
+$$f(x)=\int_{a}^{b}{g(x)dx}$$&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511230203815.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251123020315753&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;==哈哈哈==&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Test</title>
         <link>https://example.com/p/test/</link>
         <pubDate>Sat, 22 Nov 2025 21:46:43 +0800</pubDate>
