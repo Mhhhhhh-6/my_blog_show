@@ -1,7 +1,7 @@
 baseurl: https://example.com/
 languageCode: en-us
 theme: hugo-theme-stack
-title: Example Site
+title: Mhhhhhh Site
 copyright: Mhhhhhh
 
 # Theme i18n support
@@ -67,7 +67,7 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        emoji: 🍥
+        emoji: 🙂
         subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         avatar:
             enabled: true
