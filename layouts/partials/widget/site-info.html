@@ -1,8 +1,10 @@
 {{- $context := .Context -}}
 {{- $lastmod := now -}}
 
-{{- if gt (len $context.Site.RegularPages) 0 -}}
-    {{- $latestPage := index $context.Site.RegularPages.ByLastmod.Reverse 0 -}}
+{{- $articles := where $context.Site.RegularPages "Section" "post" -}}
+
+{{- if gt (len $articles) 0 -}}
+    {{- $latestPage := index $articles.ByLastmod.Reverse 0 -}}
     {{- $lastmod = $latestPage.Lastmod -}}
 {{- end -}}
 
@@ -22,7 +24,7 @@
         
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
             <span class="archive-item-date">文章数目</span>
-            <span class="archive-item-date">{{ len $context.Site.RegularPages }} 篇</span>
+            <span class="archive-item-date">{{ len $articles }} 篇</span>
         </div>
 
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
@@ -33,7 +35,7 @@
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
             <span class="archive-item-date">本站总字数</span>
             {{- $scratch := newScratch -}}
-            {{- range $context.Site.RegularPages -}}
+            {{- range $articles -}}
                 {{- $scratch.Add "wordcount" .WordCount -}}
             {{- end -}}
             <span class="archive-item-date">{{ $scratch.Get "wordcount" }} 字</span>
@@ -68,6 +70,7 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <script>
+    // 请修改 s1 的日期
     var s1 = '2025-11-23'; 
     s1 = new Date(s1.replace(/-/g, "/"));
     s2 = new Date();
