@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://mhhhhhh.netlify.app/ar/404.html'>
 
-<link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="404 Page not found">
+<link rel="stylesheet" href="/scss/style.min.ae9a9ff13657c25164296777befe3b7fe286d63067535d468be26dde2455585d.css"><meta property='og:title' content="404 Page not found">
 <meta property='og:description' content="وصف تجريبي">
 <meta property='og:url' content='https://mhhhhhh.netlify.app/ar/404.html'>
 <meta property='og:site_name' content='موقع تجريبي'>
@@ -271,6 +271,42 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script>
+    console.log("【强制脚本】正在启动...");
 
+    function runHitokoto() {
+        
+        let target = document.querySelector('.site-description') || 
+                     document.querySelector('.sidebar .subtitle');
+        
+        
+        if (!target) {
+            const allTags = document.querySelectorAll('span, p, div, h2');
+            for (let i = 0; i < allTags.length; i++) {
+                if (allTags[i].innerText.includes("异世界")) {
+                    target = allTags[i];
+                    break;
+                }
+            }
+        }
+
+        
+        if (target) {
+            console.log("【强制脚本】找到目标元素了！", target);
+            fetch('https://v1.hitokoto.cn/?c=a&c=b')
+                .then(response => response.json())
+                .then(data => {
+                    target.innerText = data.hitokoto + " —— " + data.from;
+                    console.log("【强制脚本】更新成功！");
+                })
+                .catch(err => console.error("【强制脚本】请求失败", err));
+        } else {
+            console.error("【强制脚本】没找到目标元素，无法更新台词。");
+        }
+    }
+
+    
+    setTimeout(runHitokoto, 1000);
+</script>
     </body>
 </html>

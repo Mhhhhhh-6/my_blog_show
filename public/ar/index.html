@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://mhhhhhh.netlify.app/ar/'>
 
-<link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="موقع تجريبي">
+<link rel="stylesheet" href="/scss/style.min.ae9a9ff13657c25164296777befe3b7fe286d63067535d468be26dde2455585d.css"><meta property='og:title' content="موقع تجريبي">
 <meta property='og:description' content="وصف تجريبي">
 <meta property='og:url' content='https://mhhhhhh.netlify.app/ar/'>
 <meta property='og:site_name' content='موقع تجريبي'>
@@ -288,6 +288,69 @@
 
             
         
+            
+                <section class="widget archives site-info-card">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+            <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+            <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+            <path d="M4 20l14 0"></path>
+        </svg>
+    </div>
+    <h2 class="widget-title section-title">小站资讯</h2>
+
+    <div class="widget-archive--list" style="padding: 10px 24px 24px;">
+        
+        <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+            <span class="archive-item-date">文章数目</span>
+            <span class="archive-item-date">0 篇</span>
+        </div>
+
+        <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+            <span class="archive-item-date">运行时间</span>
+            <span class="archive-item-date" id="days">0 天</span>
+        </div>
+
+        <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+            <span class="archive-item-date">本站总字数</span><span class="archive-item-date"> 字</span>
+        </div>
+
+        <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+            <span class="archive-item-date">本站访客数</span>
+            <span class="archive-item-date">
+                <span id="busuanzi_value_site_uv">--</span> 人
+            </span>
+        </div>
+
+        <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+            <span class="archive-item-date">本站总浏览量</span>
+            <span class="archive-item-date">
+                <span id="busuanzi_value_site_pv">--</span> 次
+            </span>
+        </div>
+
+        <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+            <span class="archive-item-date">最后更新</span>
+            <span class="archive-item-date">2025-11-23</span>
+        </div>
+        
+    </div>
+</section>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+    var s1 = '2025-11-23'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    s2 = new Date();
+    var days = s2.getTime() - s1.getTime();
+    var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+    document.getElementById('days').innerHTML = number_of_days + " 天";
+</script>
+            
+        
     </aside>
 
 
@@ -333,6 +396,42 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script>
+    console.log("【强制脚本】正在启动...");
 
+    function runHitokoto() {
+        
+        let target = document.querySelector('.site-description') || 
+                     document.querySelector('.sidebar .subtitle');
+        
+        
+        if (!target) {
+            const allTags = document.querySelectorAll('span, p, div, h2');
+            for (let i = 0; i < allTags.length; i++) {
+                if (allTags[i].innerText.includes("异世界")) {
+                    target = allTags[i];
+                    break;
+                }
+            }
+        }
+
+        
+        if (target) {
+            console.log("【强制脚本】找到目标元素了！", target);
+            fetch('https://v1.hitokoto.cn/?c=a&c=b')
+                .then(response => response.json())
+                .then(data => {
+                    target.innerText = data.hitokoto + " —— " + data.from;
+                    console.log("【强制脚本】更新成功！");
+                })
+                .catch(err => console.error("【强制脚本】请求失败", err));
+        } else {
+            console.error("【强制脚本】没找到目标元素，无法更新台词。");
+        }
+    }
+
+    
+    setTimeout(runHitokoto, 1000);
+</script>
     </body>
 </html>

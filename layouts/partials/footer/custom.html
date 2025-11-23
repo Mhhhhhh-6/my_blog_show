@@ -1,0 +1,37 @@
+<script>
+    console.log("【强制脚本】正在启动...");
+
+    function runHitokoto() {
+        // 1. 定义目标：尝试找 Stack 主题标准的 .site-description，或者找 sidebar 下的 subtitle
+        let target = document.querySelector('.site-description') || 
+                     document.querySelector('.sidebar .subtitle');
+        
+        // 2. 如果通过类名找不到，尝试用暴力法找包含“异世界”三个字的标签
+        if (!target) {
+            const allTags = document.querySelectorAll('span, p, div, h2');
+            for (let i = 0; i < allTags.length; i++) {
+                if (allTags[i].innerText.includes("异世界")) {
+                    target = allTags[i];
+                    break;
+                }
+            }
+        }
+
+        // 3. 开始替换
+        if (target) {
+            console.log("【强制脚本】找到目标元素了！", target);
+            fetch('https://v1.hitokoto.cn/?c=a&c=b')
+                .then(response => response.json())
+                .then(data => {
+                    target.innerText = data.hitokoto + " —— " + data.from;
+                    console.log("【强制脚本】更新成功！");
+                })
+                .catch(err => console.error("【强制脚本】请求失败", err));
+        } else {
+            console.error("【强制脚本】没找到目标元素，无法更新台词。");
+        }
+    }
+
+    // 延迟 1 秒执行，等待页面元素加载完毕
+    setTimeout(runHitokoto, 1000);
+</script>

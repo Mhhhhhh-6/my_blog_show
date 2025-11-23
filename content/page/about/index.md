@@ -1,34 +1,30 @@
 ---
-title: About
-description: Hugo, the world's fastest framework for building websites
-date: '2019-02-28'
-aliases:
-  - about-us
-  - about-hugo
-  - contact
-license: CC BY-NC-ND
-lastmod: '2020-10-09'
+title: "关于我"
+description: "这里是 Mhhhhhh 的个人介绍"
+date: 2025-11-23
+image: "https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511232137860.jpg"  # 选填，关于页的顶部大图
+
+# 下面这个 menu 配置是为了让它显示在侧边栏
 menu:
     main: 
+        name: "关于"
         weight: -90
         params:
             icon: user
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache License 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+## 👋 你好，我是 Mhhhhhh
 
-Hugo makes use of a variety of open source projects including:
+这里是我的个人博客，用来记录学习笔记和生活随想。
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+### 🏫 身份
+* 电子信息专业大二学生
+* 机器人爱好者 
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+### 🛠️ 技术栈
+* C / Python
+* MATLAB / Simulink
+* STM32 / 嵌入式开发 / 信号处理
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+### 📬 联系我
+* Email: 3160699975@qq.com

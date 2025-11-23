@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mhhhhhh.netlify.app/</loc>
-    <lastmod>2025-11-23T02:00:54+08:00</lastmod>
+    <lastmod>2025-11-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,17 +20,23 @@
                 href="https://mhhhhhh.netlify.app/"
                 />
   </url><url>
+    <loc>https://mhhhhhh.netlify.app/page/</loc>
+    <lastmod>2025-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mhhhhhh.netlify.app/%E5%85%B3%E4%BA%8E%E6%88%91/</loc>
+    <lastmod>2025-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mhhhhhh.netlify.app/%E5%BD%92%E6%A1%A3/</loc>
+    <lastmod>2025-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mhhhhhh.netlify.app/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</loc>
+    <lastmod>2025-11-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mhhhhhh.netlify.app/p/myself_talk/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
   </url><url>
     <loc>https://mhhhhhh.netlify.app/post/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
-  </url><url>
-    <loc>https://mhhhhhh.netlify.app/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mhhhhhh.netlify.app/page/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mhhhhhh.netlify.app/categories/</loc>
     <xhtml:link
@@ -48,8 +54,6 @@
                 hreflang="zh-cn"
                 href="https://mhhhhhh.netlify.app/categories/"
                 />
-  </url><url>
-    <loc>https://mhhhhhh.netlify.app/links/</loc>
   </url><url>
     <loc>https://mhhhhhh.netlify.app/search/</loc>
   </url><url>
@@ -69,9 +73,5 @@
                 hreflang="zh-cn"
                 href="https://mhhhhhh.netlify.app/tags/"
                 />
-  </url><url>
-    <loc>https://mhhhhhh.netlify.app/categories/test/</loc>
-  </url><url>
-    <loc>https://mhhhhhh.netlify.app/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>

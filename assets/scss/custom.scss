@@ -1,0 +1,17 @@
+/* 优化小站资讯卡片的字体 */
+.site-info-card {
+    /* 使用一套现代、清晰的系统字体栈，兼顾中英文和数字 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+
+    /* 让卡片里的文字稍微大一点点，看起来更舒服 */
+    .archive-item {
+        font-size: 15px; 
+        line-height: 1.6; /* 增加行高，不那么拥挤 */
+        
+        /* 让右边的数字/日期颜色稍微淡一点，更有层次感 */
+        .archive-item-date:last-child {
+            color: var(--card-text-color-secondary);
+            font-weight: 500; /* 数字稍微加粗一点点 */
+        }
+    }
+}

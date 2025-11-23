@@ -10,7 +10,7 @@ DefaultContentLanguage: zh-cn
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: false
+hasCJKLanguage: true
 
 languages:
     en:
@@ -26,7 +26,7 @@ languages:
         weight: 2
         params:
             sidebar:
-                subtitle: “你以为只有自己一个人在支撑着这个世界吗？自以为是也要有个限度，不要忘记，不管你身处哪一条世界线，你都不会孤独。”
+                subtitle: 正在连接异世界...
     ar:
         languageName: عربي
         languagedirection: rtl
@@ -178,6 +178,7 @@ params:
             - type: tag-cloud
               params:
                   limit: 10
+            - type: site-info
         page:
             - type: toc
 
