@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Test on Mhhhhhh</title>
-        <link>https://example.com/categories/test/</link>
+        <link>https://Mhhhhhh-6.github.io/my_blog_source/categories/test/</link>
         <description>Recent content in Test on Mhhhhhh</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Mhhhhhh</copyright><atom:link href="https://example.com/categories/test/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>Mhhhhhh</copyright><atom:link href="https://Mhhhhhh-6.github.io/my_blog_source/categories/test/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

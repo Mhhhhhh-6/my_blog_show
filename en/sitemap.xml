@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/en/categories/</loc>
+    <loc>https://Mhhhhhh-6.github.io/my_blog_source/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/categories/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/categories/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/categories/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/en/categories/"
                 />
   </url><url>
-    <loc>https://example.com/en/</loc>
+    <loc>https://Mhhhhhh-6.github.io/my_blog_source/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/en/"
                 />
   </url><url>
-    <loc>https://example.com/en/tags/</loc>
+    <loc>https://Mhhhhhh-6.github.io/my_blog_source/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/tags/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/tags/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/tags/"
+                href="https://Mhhhhhh-6.github.io/my_blog_source/en/tags/"
                 />
   </url>
 </urlset>
