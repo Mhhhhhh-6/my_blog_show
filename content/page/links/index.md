@@ -19,10 +19,10 @@ links:
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
 
-  - title: 某某大佬
-    description: 这里写简介
-    website: https://example.com
-    image: https://example.com/avatar.jpg
+  - title: 三松许
+    description: A.aaaa单片机维修陈局
+    website: https://simon20060610.github.io/
+    image: https://raw.githubusercontent.com/Simon20060610/Pics_for_blog/main/ssx.jpeg
 
   # 如果要加新朋友，就复制上面这一块往下贴
 ---
