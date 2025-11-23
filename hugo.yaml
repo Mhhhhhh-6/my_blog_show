@@ -26,7 +26,7 @@ languages:
         weight: 2
         params:
             sidebar:
-                subtitle: 欢迎来到吗哈哈哈的博客
+                subtitle: “你以为只有自己一个人在支撑着这个世界吗？自以为是也要有个限度，不要忘记，不管你身处哪一条世界线，你都不会孤独。”
     ar:
         languageName: عربي
         languagedirection: rtl
@@ -56,7 +56,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: /favicon.jpg # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /favicon.png # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2020
@@ -221,11 +221,11 @@ menu:
           params:
               icon: brand-github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
+        - identifier: qq
+          name: "QQ:3160699975" 
+          url: "#"
           params:
-              icon: brand-twitter
+              icon: brand-qq
 
 related:
     includeNewer: true
