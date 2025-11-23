@@ -2,76 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/</loc>
+    <loc>https://example.com/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/en/"
+                href="https://example.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/ar/"
+                href="https://example.com/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/"
+                href="https://example.com/"
                 />
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/p/myself_talk/</loc>
+    <loc>https://example.com/p/myself_talk/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/post/</loc>
+    <loc>https://example.com/post/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/archives/</loc>
+    <loc>https://example.com/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/page/</loc>
+    <loc>https://example.com/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/categories/</loc>
+    <loc>https://example.com/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/en/categories/"
+                href="https://example.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/ar/categories/"
+                href="https://example.com/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/categories/"
+                href="https://example.com/categories/"
                 />
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/links/</loc>
+    <loc>https://example.com/links/</loc>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/search/</loc>
+    <loc>https://example.com/search/</loc>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/tags/</loc>
+    <loc>https://example.com/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/en/tags/"
+                href="https://example.com/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/ar/tags/"
+                href="https://example.com/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://Mhhhhhh-6.github.io/my_blog_source/tags/"
+                href="https://example.com/tags/"
                 />
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/categories/test/</loc>
+    <loc>https://example.com/categories/test/</loc>
   </url><url>
-    <loc>https://Mhhhhhh-6.github.io/my_blog_source/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://example.com/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>
