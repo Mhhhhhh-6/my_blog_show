@@ -1,10 +1,8 @@
 {{- $context := .Context -}}
 {{- $lastmod := now -}}
 
-{{- $articles := where $context.Site.RegularPages "Section" "post" -}}
-
-{{- if gt (len $articles) 0 -}}
-    {{- $latestPage := index $articles.ByLastmod.Reverse 0 -}}
+{{- if gt (len $context.Site.RegularPages) 0 -}}
+    {{- $latestPage := index $context.Site.RegularPages.ByLastmod.Reverse 0 -}}
     {{- $lastmod = $latestPage.Lastmod -}}
 {{- end -}}
 
@@ -24,7 +22,7 @@
         
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
             <span class="archive-item-date">文章数目</span>
-            <span class="archive-item-date">{{ len $articles }} 篇</span>
+            <span class="archive-item-date">{{ len $context.Site.RegularPages }} 篇</span>
         </div>
 
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
@@ -35,7 +33,7 @@
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
             <span class="archive-item-date">本站总字数</span>
             {{- $scratch := newScratch -}}
-            {{- range $articles -}}
+            {{- range $context.Site.RegularPages -}}
                 {{- $scratch.Add "wordcount" .WordCount -}}
             {{- end -}}
             <span class="archive-item-date">{{ $scratch.Get "wordcount" }} 字</span>
@@ -44,14 +42,18 @@
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
             <span class="archive-item-date">本站访客数</span>
             <span class="archive-item-date">
-                <span id="busuanzi_value_site_uv">--</span> 人
+                <span id="busuanzi_container_site_uv">
+                    <span id="busuanzi_value_site_uv">--</span> 人
+                </span>
             </span>
         </div>
 
         <div class="archive-item" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
             <span class="archive-item-date">本站总浏览量</span>
             <span class="archive-item-date">
-                <span id="busuanzi_value_site_pv">--</span> 次
+                <span id="busuanzi_container_site_pv">
+                    <span id="busuanzi_value_site_pv">--</span> 次
+                </span>
             </span>
         </div>
 
