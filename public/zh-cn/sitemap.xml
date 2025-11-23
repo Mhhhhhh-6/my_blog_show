@@ -2,76 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://mhhhhhh.netlify.app/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/"
+                href="https://mhhhhhh.netlify.app/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/"
+                href="https://mhhhhhh.netlify.app/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/"
+                href="https://mhhhhhh.netlify.app/"
                 />
   </url><url>
-    <loc>https://example.com/p/myself_talk/</loc>
+    <loc>https://mhhhhhh.netlify.app/p/myself_talk/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/</loc>
+    <loc>https://mhhhhhh.netlify.app/post/</loc>
     <lastmod>2025-11-23T02:00:54+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/archives/</loc>
+    <loc>https://mhhhhhh.netlify.app/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/page/</loc>
+    <loc>https://mhhhhhh.netlify.app/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://mhhhhhh.netlify.app/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/categories/"
+                href="https://mhhhhhh.netlify.app/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/categories/"
+                href="https://mhhhhhh.netlify.app/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/categories/"
+                href="https://mhhhhhh.netlify.app/categories/"
                 />
   </url><url>
-    <loc>https://example.com/links/</loc>
+    <loc>https://mhhhhhh.netlify.app/links/</loc>
   </url><url>
-    <loc>https://example.com/search/</loc>
+    <loc>https://mhhhhhh.netlify.app/search/</loc>
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://mhhhhhh.netlify.app/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/tags/"
+                href="https://mhhhhhh.netlify.app/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/tags/"
+                href="https://mhhhhhh.netlify.app/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/tags/"
+                href="https://mhhhhhh.netlify.app/tags/"
                 />
   </url><url>
-    <loc>https://example.com/categories/test/</loc>
+    <loc>https://mhhhhhh.netlify.app/categories/test/</loc>
   </url><url>
-    <loc>https://example.com/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://mhhhhhh.netlify.app/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>

@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/ar/categories/</loc>
+    <loc>https://mhhhhhh.netlify.app/ar/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/categories/"
+                href="https://mhhhhhh.netlify.app/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/categories/"
+                href="https://mhhhhhh.netlify.app/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/categories/"
+                href="https://mhhhhhh.netlify.app/ar/categories/"
                 />
   </url><url>
-    <loc>https://example.com/ar/tags/</loc>
+    <loc>https://mhhhhhh.netlify.app/ar/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/tags/"
+                href="https://mhhhhhh.netlify.app/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/tags/"
+                href="https://mhhhhhh.netlify.app/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/tags/"
+                href="https://mhhhhhh.netlify.app/ar/tags/"
                 />
   </url><url>
-    <loc>https://example.com/ar/</loc>
+    <loc>https://mhhhhhh.netlify.app/ar/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/"
+                href="https://mhhhhhh.netlify.app/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/"
+                href="https://mhhhhhh.netlify.app/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/"
+                href="https://mhhhhhh.netlify.app/ar/"
                 />
   </url>
 </urlset>
