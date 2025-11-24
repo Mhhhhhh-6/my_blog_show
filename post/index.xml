@@ -662,9 +662,9 @@
 &lt;/h4&gt;&lt;p&gt;x(t)-&amp;gt;y(t)&lt;/p&gt;
 &lt;p&gt;若x(t)有界-&amp;gt;y(t)有界&lt;/p&gt;
 &lt;p&gt;则稳定&lt;/p&gt;
-&lt;p&gt;①y(t)=e^x(t)^ -&amp;gt;稳定&lt;/p&gt;
+&lt;p&gt;①y(t)=e&lt;sup&gt;x(t)&lt;/sup&gt; -&amp;gt;稳定&lt;/p&gt;
 &lt;p&gt;当x(t)有界时 y(t)有界&lt;/p&gt;
-&lt;p&gt;②y(t)=x(t)^3^-2x(t)^2^+x(t)+1  -&amp;gt;稳定&lt;/p&gt;
+&lt;p&gt;②y(t)=x(t)&lt;sup&gt;3&lt;/sup&gt;-2x(t)&lt;sup&gt;2&lt;/sup&gt;+x(t)+1  -&amp;gt;稳定&lt;/p&gt;
 &lt;p&gt;③y(t)=$\frac{dx(t)}{dt}$   -&amp;gt;不稳定&lt;/p&gt;
 &lt;p&gt;若x(t)=u(t) 则y(t)=$\delta(t)$ 无界&lt;/p&gt;
 &lt;p&gt;④y(t)=$\int_{-\infty}^{t}{x(t)dt}$  -&amp;gt;不稳定&lt;/p&gt;
@@ -673,16 +673,16 @@
 &lt;p&gt;⑥y[n]=x[n]=x[n-1]  -&amp;gt;稳定&lt;/p&gt;
 &lt;h4 id=&#34;5无记忆系统记忆系统&#34;&gt;5.无记忆系统（记忆系统）
 &lt;/h4&gt;&lt;p&gt;一个系统无记忆，是指y(t)的值仅仅只依赖于x(t)的值&lt;/p&gt;
-&lt;p&gt;y(t)=x(t)^2^+e^x(t)^   -&amp;gt;   无记忆&lt;/p&gt;
+&lt;p&gt;y(t)=x(t)&lt;sup&gt;2&lt;/sup&gt;+e&lt;sup&gt;x(t)&lt;/sup&gt;   -&amp;gt;   无记忆&lt;/p&gt;
 &lt;p&gt;y(t)=x(t-1)   -&amp;gt;   记忆&lt;/p&gt;
-&lt;p&gt;y[n]=x[n]^3^   -&amp;gt;   无记忆&lt;/p&gt;
+&lt;p&gt;y[n]=x[n]&lt;sup&gt;3&lt;/sup&gt;   -&amp;gt;   无记忆&lt;/p&gt;
 &lt;p&gt;y[n]=x[2n]   -&amp;gt;   记忆&lt;/p&gt;
 &lt;p&gt;判据：x与y括号里的数完全一样&lt;/p&gt;
 &lt;p&gt;&lt;mark&gt;无记忆系统一定是因果系统&lt;/mark&gt;&lt;/p&gt;
 &lt;h4 id=&#34;6可逆系统不可逆系统&#34;&gt;6.可逆系统（不可逆系统）
 &lt;/h4&gt;&lt;p&gt;x(t)能唯一写成y(t)的形式   -&amp;gt; 可逆&lt;/p&gt;
 &lt;p&gt;①y(t)=x(t-1) x(t)=y(t+1)   -&amp;gt;可逆&lt;/p&gt;
-&lt;p&gt;②y(t)=x(t)^2^  $x(t)=\pm\sqrt(y(t))$ -&amp;gt;不可逆&lt;/p&gt;
+&lt;p&gt;②y(t)=x(t)&lt;sup&gt;2&lt;/sup&gt;  $x(t)=\pm\sqrt(y(t))$ -&amp;gt;不可逆&lt;/p&gt;
 &lt;p&gt;③y(t)=x(2t) x(t)=y(0.5t)   -&amp;gt;可逆&lt;/p&gt;
 &lt;p&gt;④y[n]=$\sum_{k=-\infty}^{n}{x[k]}$ x[n]=y[n]-y[n-1]  -&amp;gt;可逆&lt;/p&gt;
 &lt;p&gt;⑤y(t)=$\int_{-\infty}^{t}{x(t)dt}$ x(t)=$\frac{dy(t)}{dt}$   -&amp;gt;可逆&lt;/p&gt;
