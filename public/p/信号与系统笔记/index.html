@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="更新内容：信号的分类、奇异信号、系统的基本性质以及卷积公式推导">
+<title>信号与系统笔记</title>
+
+<link rel='canonical' href='https://mhhhhhh.netlify.app/p/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.ae9a9ff13657c25164296777befe3b7fe286d63067535d468be26dde2455585d.css"><meta property='og:title' content="信号与系统笔记">
+<meta property='og:description' content="更新内容：信号的分类、奇异信号、系统的基本性质以及卷积公式推导">
+<meta property='og:url' content='https://mhhhhhh.netlify.app/p/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/'>
+<meta property='og:site_name' content='Mhhhhhh'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='信号与系统' /><meta property='article:tag' content='专业课' /><meta property='article:published_time' content='2025-11-24T18:24:20&#43;08:00'/><meta property='article:modified_time' content='2025-11-24T18:24:20&#43;08:00'/><meta property='og:image' content='https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241745513.png' />
+<meta name="twitter:title" content="信号与系统笔记">
+<meta name="twitter:description" content="更新内容：信号的分类、奇异信号、系统的基本性质以及卷积公式推导"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241745513.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/me_hu_7d34e20669b4272b.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🙂</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Mhhhhhh</a></h1>
+            <h2 class="site-description">正在连接异世界...</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Mhhhhhh-6'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='#'
+                        target="_blank"
+                        title="QQ:3160699975"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50.841 50.841" style="enable-background:new 0 0 50.841 50.841;" xml:space="preserve">
+<path id="qq" d="M46.325,27.716c-0.3-5.5-4.1-8.8-4.1-8.8s-1.2-5.9-1.7-8.2c-0.6-2.3-6.6-12.3-15.8-10.5s-12,5.9-14.4,10
+	s-1.3,10.1-1.3,10.1s-1.5,1.9-2.4,4c-0.9,2.2-1.8,5.4-2.1,8.1s0.3,4.4,2.3,5.3s3.1-0.2,3.1-0.2c0.5,1.1,2.9,2.7,2.9,2.7
+	s-2.5,1.1-3.6,2.7s-0.8,4.5,1.1,5.8c1.9,1.3,3.3,2.3,7.1,2.1s7.8-2.4,7.8-2.4c1,0.4,3.8-0.1,3.8-0.1s1.5,1,4,1.4s5.2-0.1,7.5-1.3
+	s3.6-3.1,2.8-5.7s-3.1-3.2-3.1-3.2s0.1-0.3,0.7-1.5s0.7-3.4,0.7-3.4s0.7,0.2,1.2,0.4c0.5,0.2,1.2-0.2,2.1-0.7
+	S46.625,33.216,46.325,27.716z M41.225,41.616c0.6,0.7,0.5,3.2,0.1,3.1s-2-3.5-2.2-4C39.025,40.416,40.625,40.916,41.225,41.616z
+	 M45.225,30.116c-0.4-0.6-4.8-8.7-5.2-8.6s-0.7,0.2-0.4,0.5s5.6,9.3,5.6,9.3s-0.4,1.1-0.9,1.5s-1,0.5-1,0.5s-4.2-7-4.4-7
+	s-0.7,0.5-0.5,1c0.3,0.5,4.2,6,3.9,6s-1.6-1.4-1.9-1.3c-0.3,0.1-0.6,0.4-0.6,0.4s-1.8-3.7-2.2-3.7s-0.6,0.2-0.5,0.4s2.5,4.4,2.5,4.4
+	s0.1,2.1-0.2,1.9s-2.2-4.5-2.5-4.5s-0.6,0.7-0.5,0.9c0.1,0.2,2.6,4.7,2.6,4.7s-0.3,1.9-0.5,1.6s-2.7-4.3-2.7-4.3s-0.4,0.9-0.2,1.1
+	s2.6,4,2.6,4l-0.2,0.4l-0.7-0.2l3.6,6.6c0,0-0.5,0.6-0.7,0.4s-5.4-8.9-5.6-8.9s-0.3,0.6-0.3,0.6l5.3,8.7c0,0-0.8,0.8-1.1,0.5
+	s-5-8.1-5.2-8.1s-0.9,0.2-0.7,0.5s5,8,5,8s-1,0.6-1.4,0.2s-4.1-7.1-4.3-7.1s-0.6,0.5-0.6,0.5s4.2,6.8,4,6.8s-1.5-0.3-1.5-0.3
+	s-3.6-6.1-3.9-6.2s-0.8-0.1-0.6,0.2s3.6,5.9,3.6,5.9s-0.6,0.3-1.1-0.2s-3.2-5.3-3.4-5.3s-0.8,0.1-0.5,0.5s2.9,4.4,2.6,4.4
+	s-1.2-0.2-1.6-0.5c-0.4-0.3-2.1-3.4-2.3-3.4s-1,0.2-0.6,0.7s1.3,2,1.1,2s-0.4,0.3-0.7-0.1s-1.1-1.7-1.3-1.7s-1,0.1-0.6,0.5
+	s0.9,1.4,0.9,1.4s-1,0.1-2.1,0.5c-1.2,0.4-3.8,2.3-7.6,2.4c-3.7,0.2-5.2-1.4-5.8-2.7c-0.6-1.3,0.7-3.2,1.6-3.8s2.1-0.7,2.6-0.5
+	s0.8,0.3,1,0.2c0.3-0.1,0.5-0.5,0.1-0.7c-0.4-0.3-2.6-2.3-3.4-3.7s-0.8-3.8-1.8-3.5c-0.3,0.1-1.3,2-1.9,2.1s-1.9,0.6-2.4-1.1
+	s-0.3-4.6,1.1-8.1c1.4-3.4,3-6.4,3-6.4s-0.9-5.1,0.7-8.2c1.5-3.1,3.9-6.9,7.1-8.5c3.2-1.6,9.9-3.5,15.2-0.5s6.7,8.8,6.7,8.8
+	s-0.8-1-1.1-0.7c-0.4,0.3-0.2,0.6-0.1,0.6s1.5,1.9,1.7,2.7s0.4,1.6,0.4,1.6s-1.8-2.5-2-2.3s-0.6,0.7-0.4,0.8
+	c0.2,0.1,2.7,3.2,2.7,3.2l0.1,1.7c0,0-2.2-3-2.3-2.9s-0.2,0.8,0.1,1.1s1.8,2.4,2.1,2.5s1.6,0,2.5,1.7s1.3,3.5,1,3.3
+	s-2.1-4.5-2.6-4.4s-0.2,0.8-0.2,0.8l3.3,5.4C44.725,26.816,45.625,30.716,45.225,30.116z M38.625,23.616c0,0.2,0.5,1.2,0.8,1.8
+	c0.4,0.6,3.5,6.1,3.6,6.3c0.1,0.1,0.5,0.1,0.5-0.1s-0.6-1-1.2-2.2c-0.6-1.2-3.2-5.9-3.3-6
+	C39.025,23.216,38.625,23.416,38.625,23.616z M31.425,21.416c-0.3-0.2-1,0.7-1.4,0.6s-1-0.9-1.3-0.9c-0.9,0.1-0.6,0.8-0.3,1.2
+	c0.3,0.3,1.9,0.9,2.5,0.4C31.625,22.216,31.625,21.616,31.425,21.416z M28.625,11.716c-1.1,0.7-2.3,1.9-2.5,3.6s0.4,3.5,1.2,4.5
+	c1,1.3,2.5,1.1,3.3,1c0.8-0.2,1.8-1.3,2.2-3.2c0.4-1.8,0.3-4.1-0.6-5.1C31.225,11.416,29.725,11.016,28.625,11.716z M30.725,19.416
+	c-0.8,0.5-1.6,0.6-2.5-0.3s-1.1-2.6-0.8-4.2s1.2-2,1.6-2.2c1-0.6,2.5,0.3,2.8,1.8C32.025,15.916,31.525,18.916,30.725,19.416z
+	 M21.925,11.816c-1.6,0.2-2.4,1.3-3.1,2.4c-0.6,1.1-0.8,3.3-0.4,4.6c0.4,1.3,1.6,2.5,2.5,2.7c0.8,0.2,2.3,0.3,3.1-0.9
+	c0.9-1.2,1.1-4.2,0.8-6.2C24.625,12.416,22.925,11.616,21.925,11.816z M23.025,19.916c-0.7,0.6-1.6,0.8-2.5,0.2s-1.2-2-1.3-2.8
+	c-0.1-0.9,0.5-2.7,0.9-3.2s0.9-1.1,1.8-1.3c0.3,0,2,0.4,2,2.2C24.025,16.816,23.725,19.316,23.025,19.916z M22.125,15.316
+	c-0.7,0.1-1.2,0.9-1.1,1.3c0.1,0.4,0.5,1.4,1.2,1.2s1.5-0.8,1.3-1.5S22.925,15.216,22.125,15.316z M29.425,15.016
+	c-1.6,0.1-1.5,1.1-1.5,1.8c-0.1,0.7,0.4,0.8,0.7,0.7c0.3-0.1,0.2-1,0.6-1.2c0.4-0.2,0.8,0.5,1.1,0.6c0.3,0.2,0.8-0.2,0.7-0.5
+	S30.225,14.916,29.425,15.016z M17.425,7.316c-0.4,0-1.8,1-3,2.7c-1.1,1.7-1.7,3.9-1.8,5.2s0.4,1.5,0.6,1.6c0.2,0.1,0.5,0.2,0.6,0
+	s0.1-1.9,1-4.8c0.9-2.8,2.9-3.3,3.2-3.9C18.325,7.516,17.825,7.416,17.425,7.316z M31.025,6.416c0.5,0.2,1.2,0.1,1.3-0.3
+	s-0.8-1.9-3.4-2c-2.6-0.1-3.4,1-3.5,1.2c-0.1,0.3,0.2,0.9,0.7,0.8s0.9-0.9,2.3-0.9C29.725,5.116,30.625,6.216,31.025,6.416z
+	 M10.325,26.016c-0.3,0-2.2,1.6-2.7,3.5c-0.6,1.9-0.4,4-0.3,4.1c0.2,0.2,0.6,0.3,0.8,0s0.1-1.9,0.5-3.4c0.5-1.6,1.3-2.3,1.8-3.1
+	S10.625,26.016,10.325,26.016z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%BD%92%E6%A1%A3/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://mhhhhhh.netlify.app/en/" >English</option>
+                                
+                                    <option value="https://mhhhhhh.netlify.app/" selected>中文</option>
+                                
+                                    <option value="https://mhhhhhh.netlify.app/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#第一章-信号与系统">第一章 信号与系统</a>
+      <ol>
+        <li><a href="#0-附录积分表">0 附录：积分表</a></li>
+        <li><a href="#11信号的描述与信号的分类">1.1信号的描述与信号的分类</a>
+          <ol>
+            <li><a href="#1基于信号维度的分类">1.基于信号维度的分类</a></li>
+            <li><a href="#2一维信号的两种形式连续信号和离散信号">2.一维信号的两种形式：连续信号和离散信号</a></li>
+            <li><a href="#3周期信号与非周期信号">3.周期信号与非周期信号</a></li>
+            <li><a href="#4奇信号与偶信号对应于奇函数与偶函数">4.奇信号与偶信号（对应于奇函数与偶函数）</a></li>
+            <li><a href="#5功率信号和能量信号">5.功率信号和能量信号</a></li>
+          </ol>
+        </li>
+        <li><a href="#12奇异信号">1.2奇异信号</a>
+          <ol>
+            <li><a href="#1单位阶跃信号">1.单位阶跃信号</a></li>
+            <li><a href="#2冲激信号">2.冲激信号</a></li>
+            <li><a href="#3抽样函数sat">3.抽样函数Sa(t)</a></li>
+          </ol>
+        </li>
+        <li><a href="#13单位冲激序列和单位阶跃序列">1.3单位冲激序列和单位阶跃序列</a>
+          <ol>
+            <li><a href="#1单位冲激序列">1单位冲激序列</a></li>
+            <li><a href="#2单位阶跃序列">2.单位阶跃序列</a></li>
+          </ol>
+        </li>
+        <li><a href="#14信号的自变量变换">1.4信号的自变量变换</a></li>
+        <li><a href="#16系统的基本性质">1.6系统的基本性质</a>
+          <ol>
+            <li><a href="#1线性系统非线性系统"><mark>1.线性系统（非线性系统）</mark></a></li>
+            <li><a href="#2时不变系统时变系统"><mark>2.时不变系统（时变系统）</mark></a></li>
+            <li><a href="#3因果系统非因果系统">3.因果系统（非因果系统）</a></li>
+            <li><a href="#4稳定系统非稳定系统">4.稳定系统（非稳定系统）</a></li>
+            <li><a href="#5无记忆系统记忆系统">5.无记忆系统（记忆系统）</a></li>
+            <li><a href="#6可逆系统不可逆系统">6.可逆系统（不可逆系统）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第二章-连续系统的时域分析">第二章 连续系统的时域分析</a>
+      <ol>
+        <li><a href="#21lti系统时域分析">2.1LTI系统时域分析</a></li>
+        <li><a href="#22离散lti系统卷积公式推导">2.2离散LTI系统卷积公式推导</a></li>
+        <li><a href="#23连续lti系统卷积公式">2.3连续LTI系统卷积公式</a></li>
+        <li><a href="#24冲激函数的性质">2.4冲激函数的性质</a>
+          <ol>
+            <li><a href="#1int_-inftyinftydeltatdt1">1.$\int_{-\infty}^{+\infty}{\delta(t)dt=1}$</a></li>
+            <li><a href="#2int_-inftyinftyxtdeltatdtx0">2.$\int_{-\infty}^{+\infty}{x(t)\delta(t)dt=x(0)}$</a></li>
+            <li><a href="#3int_-inftyinftyxtdeltat-t_0xt_0">3.$\int_{-\infty}^{+\infty}{x(t)\delta(t-t_0)=x(t_0)}$</a></li>
+            <li><a href="#4xtdeltatx0deltat">4.$x(t)\delta(t)=x(0)\delta(t)$</a></li>
+            <li><a href="#5deltaatfrac1adeltat">5.$\delta(at)=\frac{1}{|a|}\delta(t)$</a></li>
+            <li><a href="#6deltaatbfrac1adeltatfracba">6.$\delta(at+b)=\frac{1}{|a|}\delta(t+\frac{b}{a})$</a></li>
+            <li><a href="#7deltaftsum_所有ft_00frac1ft0deltat-t_0">7.$\delta(f(t))=\sum_{所有f(t_0)=0}{\frac{1}{|f&rsquo;(t0)|}\delta(t-t_0)}$</a></li>
+            <li><a href="#8-lim_omega-to-infty-fracsinomega-tpi-t--deltat">8. $\lim_{\omega \to +\infty} \frac{\sin(\omega t)}{\pi t} = \delta(t)$</a></li>
+            <li><a href="#9-lim_tau-to-infty-fractaupit2tau2--deltat">9. $\lim_{\tau \to +\infty} \frac{\tau}{\pi(t^2+\tau^2)} = \delta(t)$</a></li>
+          </ol>
+        </li>
+        <li><a href="#25连续信号卷积的计算">2.5连续信号卷积的计算</a></li>
+        <li><a href="#26卷积性质">2.6卷积性质</a></li>
+        <li><a href="#27补充知识">2.7补充知识</a></li>
+        <li><a href="#28lti系统因果的充要条件">2.8LTI系统因果的充要条件</a></li>
+      </ol>
+    </li>
+    <li><a href="#第三章-连续信号与系统的频域分析傅里叶变换">第三章 连续信号与系统的频域分析（傅里叶变换）</a>
+      <ol>
+        <li><a href="#31傅里叶级数">3.1傅里叶级数</a></li>
+        <li><a href="#32傅里叶级数收敛性证明狄利赫里三条件">3.2傅里叶级数收敛性证明(狄利赫里三条件)</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241745513.png" loading="lazy" alt="Featured image of post 信号与系统笔记" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" >
+                学习笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/">信号与系统笔记</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            更新内容：信号的分类、奇异信号、系统的基本性质以及卷积公式推导
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-11-24T18:24:20&#43;08:00'>Nov 24, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 99 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="信号与系统搭配2022胡浩基老师讲解">信号与系统（搭配2022胡浩基老师讲解）
+</h1><h2 id="第一章-信号与系统">第一章 信号与系统
+</h2><h3 id="0-附录积分表">0 附录：积分表
+</h3><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241450966.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="11信号的描述与信号的分类">1.1信号的描述与信号的分类
+</h3><h4 id="1基于信号维度的分类">1.基于信号维度的分类
+</h4><p>一维信号（声音信号）</p>
+<p>二维信号（图像信号，RGB编码）</p>
+<p>三维信号（视频信号，给图像信号加一个时间轴/深度图（RGBD）<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241451083.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>)</p>
+<p>在信号与系统中 我们只讨论一维的信号。</p>
+<h4 id="2一维信号的两种形式连续信号和离散信号">2.一维信号的两种形式：连续信号和离散信号
+</h4><p><mark>x(t):连续信号</mark> 因变量随t变化而变化
+<mark>x[n]:离散信号</mark> 其中 n为整数（他只是一个名字 为了表达的统一）</p>
+<p>而对于x <mark>是信号的幅度（幅值、强度、大小等）</mark></p>
+<h4 id="3周期信号与非周期信号">3.周期信号与非周期信号
+</h4><p>x(t)=x(t+mT),m属于Z，T为最小正周期</p>
+<p>x[n]=x[n+mN],m属于Z，N是一个自然数</p>
+<h4 id="4奇信号与偶信号对应于奇函数与偶函数">4.奇信号与偶信号（对应于奇函数与偶函数）
+</h4><p>任意一个信号都可以被分为一个奇信号和一个偶信号，且拆法唯一</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241451970.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>对于离散信号 同理（仅仅只是连续信号取特殊值）</p>
+<p>唯一性证明：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241452534.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h4 id="5功率信号和能量信号">5.功率信号和能量信号
+</h4><h5 id="能量与功率">能量与功率：
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241452626.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>离散的求和和连续的积分 是一回事</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241452476.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h5 id="能量信号能量有限信号">能量信号（能量有限信号）：
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453443.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h5 id="功率信号功率有限信号">功率信号（功率有限信号）
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453333.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="12奇异信号">1.2奇异信号
+</h3><h4 id="1单位阶跃信号">1.单位阶跃信号
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453662.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><mark>需要注意的是，u(0)可以等于任意值</mark>，第二章会涉及</p>
+<h4 id="2冲激信号">2.冲激信号
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453664.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h4 id="3抽样函数sat">3.抽样函数Sa(t)
+</h4><p>前置证明</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453705.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454584.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454708.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接下来是对<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454793.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>的证明</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454578.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>首先构造I(a) 求导消去t</p>
+<p>由欧拉公式：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455317.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>将sint代换</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455636.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>然后 对于目前的式子 是可以积分的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455926.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>积分后是这样</p>
+<p>即<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455210.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接下来确定C</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455981.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>因为a为正无穷时 I(a)为0</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455140.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>得证</p>
+<h3 id="13单位冲激序列和单位阶跃序列">1.3单位冲激序列和单位阶跃序列
+</h3><h4 id="1单位冲激序列">1单位冲激序列
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456406.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>他和冲激信号有本质的区别 冲激信号是奇异信号 在0处为正无穷 在其他处为0 且从负无穷积分到正无穷值为1</p>
+<p>而单位冲激序列是 在0处为1 其他为0 且求和值亦为1</p>
+<h4 id="2单位阶跃序列">2.单位阶跃序列
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456621.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>和u[t]对应 但是离散 对比图如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456728.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="14信号的自变量变换">1.4信号的自变量变换
+</h3><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456040.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>对于x(3t+6):</p>
+<p>1.化成标准形式：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456803.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>2.前有负号翻转：此题没有负号 所以不翻转</p>
+<p>3.系数大于1 压缩 系数小于1 拉伸</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457653.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145706468"
+	
+	
+></p>
+<p>4.加号左移 减号右移</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457256.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145730660"
+	
+	
+></p>
+<p>对于x(-3t+6)</p>
+<p>1.化为标准形式:x(-3(t-2))</p>
+<p>2.前有负号翻转：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457967.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145744778"
+	
+	
+></p>
+<p>3.系数大于1，压缩；系数小于1，拉伸：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457704.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145757534"
+	
+	
+></p>
+<p>4.加号左移，减号右移：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458935.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145809761"
+	
+	
+></p>
+<p>那么对于<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458395.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145820189"
+	
+	
+></p>
+<p>也很简单 只需要做一个变量代换,令u=3-2t 则又是上面的问题</p>
+<p>对于单位阶跃信号，构成方波：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458036.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145835805"
+	
+	
+></p>
+<p>u(t)是大于0的都为1 u(t-t0)是大于t0的都为1 那么G(t)就是0到t0之间都为1</p>
+<p>同理 对于单位阶跃序列：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458788.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124145852586"
+	
+	
+></p>
+<p>因为在n=N时 也被减为0了 所以是N-1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241721590.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172134387"
+	
+	
+></p>
+<p>注意边界值</p>
+<p>对于单位冲激序列：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241721450.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172146200"
+	
+	
+>只不过是每个项对应的单位冲激序列相加而已 也很简单</p>
+<p><mark>卷积公式</mark><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241723755.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172330556"
+	
+	
+></p>
+<h3 id="16系统的基本性质">1.6系统的基本性质
+</h3><h4 id="1线性系统非线性系统"><mark>1.线性系统（非线性系统）</mark>
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241723586.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172341308"
+	
+	
+></p>
+<p>一为齐次性 二为叠加性 其中a为任意实数</p>
+<h5 id="齐次性证明">齐次性证明
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724009.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172406822"
+	
+	
+></p>
+<p>由于对于任意的x(t) 所以有以下证明：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724586.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172415390"
+	
+	
+></p>
+<p>假设一个系统能将x(t)放大三倍</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724414.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251124172424241"
+	
+	
+></p>
+<p>那么ax(t)通过系统后输出什么呢？ 首先将ax(t)视作一整个x(t)通过系统后变成了三倍的ax(t) 即a[3x(t)] 即ay(t) 所以齐次性得证</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724374.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023194749872"
+	
+	
+></p>
+<h5 id="叠加性证明">叠加性证明
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724282.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023194957209"
+	
+	
+></p>
+<p>目前有这个</p>
+<p>现在把x1 x2视作一包x 则：<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724520.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023195032086"
+	
+	
+></p>
+<p>拆开后：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724934.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023195048130"
+	
+	
+></p>
+<p>即为<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725518.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023195057575"
+	
+	
+></p>
+<p>满足叠加性 得证</p>
+<h5 id="yttxt为线性系统的证明"><mark>y(t)=tx(t)为线性系统的证明</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725033.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023195535612"
+	
+	
+></p>
+<h5 id="微分器系统ytdxtdt是线性系统的证明"><mark>微分器系统（y(t)=dx(t)/dt）是线性系统的证明</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725864.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023200035356"
+	
+	
+></p>
+<h5 id="积分器是线性系统的证明"><mark>积分器是线性系统的证明：</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725222.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023202340837"
+	
+	
+></p>
+<h5 id="ytxt1不是线性系统的证明"><mark>y(t)=x(t)+1不是线性系统的证明</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726743.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023221931423"
+	
+	
+></p>
+<h5 id="ytxt2不是线性系统的证明"><mark>y(t)=x(t)^2不是线性系统的证明</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726730.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023222414254"
+	
+	
+></p>
+<p>以上 离散均具有同样的性质</p>
+<h5 id="ynxn-xn-1离散微分器是线性系统的证明"><mark>y[n]=x[n]-x[n-1]（离散微分器）是线性系统的证明</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726496.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023223458001"
+	
+	
+></p>
+<p>叠加性类似 都是令f[n]为要证的式子</p>
+<h5 id="离散积分器是线性系统自己证"><mark>离散积分器是线性系统（自己证）</mark>
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726290.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023224048354"
+	
+	
+></p>
+<h5 id="线性系统的判据">线性系统的判据
+</h5><p>1.每一项都有x</p>
+<p>2.每一项的x都是一次</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727965.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023224343121"
+	
+	
+></p>
+<h5 id="拓展题">拓展题
+</h5><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727087.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251023224918462"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727848.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="下载"
+	
+	
+></p>
+<h4 id="2时不变系统时变系统"><mark>2.时不变系统（时变系统）</mark>
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727246.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251104231229755"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727884.PNG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="IMG_0342(20251104-235355)"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727654.PNG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="IMG_0343(20251105-000159)"
+	
+	
+></p>
+<p>综上可得出时不变的判据：1.t只在x的括号里 2.t只能是t，不能是2t，-2t，t^2等其他函数</p>
+<h4 id="3因果系统非因果系统">3.因果系统（非因果系统）
+</h4><p>定义：输出y(t)在输入x(t)之后发生（如果一个系统任何时刻输出只决定于现在和过去的输入，就称该系统为因果系统）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728014.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251105001014900"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728112.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251105001332029"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728834.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251105001509248"
+	
+	
+></p>
+<p>因果系统的判据：x括号里的数<mark>恒小于</mark>y括号里的数</p>
+<h4 id="4稳定系统非稳定系统">4.稳定系统（非稳定系统）
+</h4><p>x(t)-&gt;y(t)</p>
+<p>若x(t)有界-&gt;y(t)有界</p>
+<p>则稳定</p>
+<p>①y(t)=e^x(t)^ -&gt;稳定</p>
+<p>当x(t)有界时 y(t)有界</p>
+<p>②y(t)=x(t)^3^-2x(t)^2^+x(t)+1  -&gt;稳定</p>
+<p>③y(t)=$\frac{dx(t)}{dt}$   -&gt;不稳定</p>
+<p>若x(t)=u(t) 则y(t)=$\delta(t)$ 无界</p>
+<p>④y(t)=$\int_{-\infty}^{t}{x(t)dt}$  -&gt;不稳定</p>
+<p>若x(t)=1 则y(t)=$+\infty$ 无界</p>
+<p>⑤y[n]=$\sum_{k=-\infty}^{+\infty}{x[k]}$  -&gt;不稳定</p>
+<p>⑥y[n]=x[n]=x[n-1]  -&gt;稳定</p>
+<h4 id="5无记忆系统记忆系统">5.无记忆系统（记忆系统）
+</h4><p>一个系统无记忆，是指y(t)的值仅仅只依赖于x(t)的值</p>
+<p>y(t)=x(t)^2^+e^x(t)^   -&gt;   无记忆</p>
+<p>y(t)=x(t-1)   -&gt;   记忆</p>
+<p>y[n]=x[n]^3^   -&gt;   无记忆</p>
+<p>y[n]=x[2n]   -&gt;   记忆</p>
+<p>判据：x与y括号里的数完全一样</p>
+<p><mark>无记忆系统一定是因果系统</mark></p>
+<h4 id="6可逆系统不可逆系统">6.可逆系统（不可逆系统）
+</h4><p>x(t)能唯一写成y(t)的形式   -&gt; 可逆</p>
+<p>①y(t)=x(t-1) x(t)=y(t+1)   -&gt;可逆</p>
+<p>②y(t)=x(t)^2^  $x(t)=\pm\sqrt(y(t))$ -&gt;不可逆</p>
+<p>③y(t)=x(2t) x(t)=y(0.5t)   -&gt;可逆</p>
+<p>④y[n]=$\sum_{k=-\infty}^{n}{x[k]}$ x[n]=y[n]-y[n-1]  -&gt;可逆</p>
+<p>⑤y(t)=$\int_{-\infty}^{t}{x(t)dt}$ x(t)=$\frac{dy(t)}{dt}$   -&gt;可逆</p>
+<p>⑥y(t)=$\frac{dx(t)}{dt}$ x(t)=$\int_{-\infty}^{t}{y(t)dt+C}$   -&gt;不可逆</p>
+<h2 id="第二章-连续系统的时域分析">第二章 连续系统的时域分析
+</h2><h3 id="21lti系统时域分析">2.1LTI系统时域分析
+</h3><p>线性时不变系统（Linear Time-Invariant System）</p>
+<p>如果一个系统既线性又时不变，我们就叫它线性时不变系统(LTI系统)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728424.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251117175819327"
+	
+	
+></p>
+<p><mark>线性只是对现实问题的近似</mark></p>
+<p>LTI很简单 如果我们知道LTI的一个x(t)对应的y(t)那么我们就知道所有的x(t)对应的y(t)</p>
+<h3 id="22离散lti系统卷积公式推导">2.2离散LTI系统卷积公式推导
+</h3><p>$\delta[n]$ -&gt; h[n] (经过LTI系统)</p>
+<p>$\delta[n]$ 是单位脉冲序列 h[n]是单位脉冲响应(LTI系统唯一的标识)</p>
+<p>而若x[n] -&gt; y[n] (任意x[n]经过上述的LTI系统)</p>
+<p>y[n]=x[n]*h[n]</p>
+<p>*为卷积(Convolution)</p>
+<p>那么这个要怎么算才能比较快呢</p>
+<p>一 列表法</p>
+<p>①确定y[n]=x[n]*h[n]取值范围(y[n]最左边(最右边)=x[n]最左边(最右边)+h[n]最左边(最右边))</p>
+<p>②<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728069.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251117235153216"
+	
+	
+></p>
+<p>二 卷积计算公式</p>
+<p><mark>y[n]=$\sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$</mark> 离散系统的卷积和 即<mark>y[n]=x[n]*h[n]</mark></p>
+<p>要证上式 先证明x[n]= $\sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241729578.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251119220306997"
+	
+	
+></p>
+<p>得证</p>
+<p>然后</p>
+<p>$\delta[n]-&gt;h[n]$ h[n]是$\delta[n]$的响应</p>
+<p>$\delta[n-k]-&gt;h[n-k]$ 时不变系统</p>
+<p>$x[k]\delta[n-k]-&gt;x[k]h[n-k]$ 线性系统齐次性</p>
+<p>$\sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}-&gt;\sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$ 线性系统叠加性</p>
+<p>而$\sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}=x[n]$</p>
+<p>所以$x[n]-&gt;\sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$</p>
+<p>得证</p>
+<p>过程：翻转 平移 相乘 求和</p>
+<h3 id="23连续lti系统卷积公式">2.3连续LTI系统卷积公式
+</h3><p>$x(t)=\int_{-\infty}^{+\infty}{x(\tau)\delta(t-\tau)d\tau}$</p>
+<p>-&gt;(通过LTI)</p>
+<p>$y(t)=\int_{-\infty}^{+\infty}{x(\tau)h(t-\tau)d\tau}$</p>
+<p>即$x(t)*h(t)=\int_{-\infty}^{+\infty}{x(\tau)h(t-\tau)d\tau}$</p>
+<h3 id="24冲激函数的性质">2.4冲激函数的性质
+</h3><h4 id="1int_-inftyinftydeltatdt1">1.$\int_{-\infty}^{+\infty}{\delta(t)dt=1}$
+</h4><h4 id="2int_-inftyinftyxtdeltatdtx0">2.$\int_{-\infty}^{+\infty}{x(t)\delta(t)dt=x(0)}$
+</h4><h4 id="3int_-inftyinftyxtdeltat-t_0xt_0">3.$\int_{-\infty}^{+\infty}{x(t)\delta(t-t_0)=x(t_0)}$
+</h4><h4 id="4xtdeltatx0deltat">4.$x(t)\delta(t)=x(0)\delta(t)$
+</h4><h4 id="5deltaatfrac1adeltat">5.$\delta(at)=\frac{1}{|a|}\delta(t)$
+</h4><h4 id="6deltaatbfrac1adeltatfracba">6.$\delta(at+b)=\frac{1}{|a|}\delta(t+\frac{b}{a})$
+</h4><h4 id="7deltaftsum_所有ft_00frac1ft0deltat-t_0">7.$\delta(f(t))=\sum_{所有f(t_0)=0}{\frac{1}{|f&rsquo;(t0)|}\delta(t-t_0)}$
+</h4><h4 id="8-lim_omega-to-infty-fracsinomega-tpi-t--deltat">8. $\lim_{\omega \to +\infty} \frac{\sin(\omega t)}{\pi t} = \delta(t)$
+</h4><h4 id="9-lim_tau-to-infty-fractaupit2tau2--deltat">9. $\lim_{\tau \to +\infty} \frac{\tau}{\pi(t^2+\tau^2)} = \delta(t)$
+</h4><h3 id="25连续信号卷积的计算">2.5连续信号卷积的计算
+</h3><p>和离散的一样</p>
+<p>1.公式法</p>
+<p>2.翻转 平移 相乘 求和</p>
+<h3 id="26卷积性质">2.6卷积性质
+</h3><p>①交换律：$x(t)*h(t)=h(t)*x(t)$</p>
+<p>②结合律：$[x(t)*h_1(t)]*h_2(t)=[x(t)*h_2(t)]*h_1(t)$</p>
+<p>③分配律：$x(t)*[h_1(t)+h_2(t)]=x(t)*h_1(t)+x(t)*h_2(t)$</p>
+<p>注意 积分和求和具有分配律</p>
+<h3 id="27补充知识">2.7补充知识
+</h3><p>①同宽的矩阵方波卷积得三角波</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241729150.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251120225441953"
+	
+	
+></p>
+<p>②$x(t)*u(t)=\int_{-\infty}^{t}{x(\tau)d\tau}$ 积分器</p>
+<p>$x[n]*u[n]=\sum_{k=-\infty}^{n}{x[k]}$ 累加器</p>
+<p>③冲激偶函数$\delta&rsquo;(t)=\frac{d\delta(t)}{dt}$</p>
+<p>$\int_{-\infty}^{+\infty}{x(t)\delta&rsquo;(t)dt}=-x&rsquo;(0)$</p>
+<p>④$\frac{d[x(t)*h(t)]}{dt}=\frac{dx(t)}{dt}*h(t)=\frac{dh(t)}{dt}*x(t)$</p>
+<p>⑤$x(t+t_0)*h(t-t_0)=x(t)*h(t)$</p>
+<p>⑥定理：LTI系统稳定的充要条件是：$\int_{-\infty}^{+\infty}{|h(t)|dt}&lt;+\infty 或 \sum_{k=-\infty}^{+\infty}{|h[n]|}&lt;+\infty$</p>
+<h3 id="28lti系统因果的充要条件">2.8LTI系统因果的充要条件
+</h3><p>$h(t)=0 当t&lt;0时$</p>
+<p>$或h[n]=0当n&lt;0时$</p>
+<p>勒贝格定义下 离散点不考虑</p>
+<h2 id="第三章-连续信号与系统的频域分析傅里叶变换">第三章 连续信号与系统的频域分析（傅里叶变换）
+</h2><h3 id="31傅里叶级数">3.1傅里叶级数
+</h3><p>一开始的傅里叶级数是用来研究热传导的</p>
+<p>热传导方程：</p>
+<p>求f(x,t) 当t&gt;0时</p>
+<p>$\frac{\partial f}{\partial t}=K\frac{\partial^2f}{\partial x^2}$</p>
+<p>$f(x,0)=f(x)$</p>
+<p>这个难点在于f(x)的形式不定</p>
+<p>我们能找到特例 来满足热传导方程：</p>
+<p>①当$f(x)=B$时，$f(x,t)=B$</p>
+<p>②当$f(x)=Bcos(\omega x)$时，$f(x,t)=Bcos(\omega x)e^{-K\omega^2t}$</p>
+<p>③当$f(x)=Csin(\omega x)$时，$f(x,t)=Csin(\omega x)e^{-K\omega^2t}$</p>
+<p>傅里叶发布了论热传导方程的解法</p>
+<p>①如果$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$</p>
+<p>则热传导方程的解是</p>
+<p>$f(x,t)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)e^{-Kk^2\omega_0^2t}}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)e^{-Kk^2\omega_0^2t}}$</p>
+<p>注意 所有sin和cos的频率 都是$\omega_0$的整数倍</p>
+<p>我们叫$\omega_0$为基波频率 $k\omega_0$为k次谐波频率 $B_0$为直流分量 $T_0=\frac{2\pi}{\omega_0}$为基波周期</p>
+<p>那么 如何根据f(x)算出$B_0$ 所有的$B_k$和$C_k$呢</p>
+<p>(1)算$B_0$</p>
+<p>首先 ①$\int_{0}^{T_0}{cos(k\omega_0x)dx}=0$ ②$\int_{0}^{T_0}{cos(k\omega_0x)dx}=0$</p>
+<p>那么我们对$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$</p>
+<p>两边从0到$T_0$积分 得到$\int_{0}^{T_0}{f(x)dx}=B_0T_0$</p>
+<p>所以$B_0=\frac{1}{T_0}\int_{0}^{T_0}{f(x)dx}$</p>
+<p>(2)算$B_k$</p>
+<p>首先①$\int_{0}^{T_0}{cos(k_1\omega_0x)cos(k_2\omega_0x)dx}=0 (k_1\neq k_2)$</p>
+<p>还有②$\int_{0}^{T_0}{cos(k_1\omega_0x)sin(k_2\omega_0x)dx}=0 (k_1\neq k_2)$</p>
+<p>并且③$\int_{0}^{T_0}{sin(k_1\omega_0x)sin(k_2\omega_0x)dx}=0 (k_1\neq k_2)$</p>
+<p>另外④$\int_{0}^{T_0}{cos^2(k\omega_0x)}=\frac{T_0}{2}$ $\int_{0}^{T_0}{sin^2(k\omega_0x)}=\frac{T_0}{2}$</p>
+<p>总结一下(1)和(2)的前置公式</p>
+<p>从 $1, \cos(\omega_0 x), \cos(2\omega_0 x), \cos(3\omega_0 x) \cdots$</p>
+<p>$\sin(\omega_0 x), \sin(2\omega_0 x), \sin(3\omega_0 x) \cdots$</p>
+<p>任取两个，相乘同时在 $[0, T_0]$ 积分，结果都为 $0$</p>
+<p>任选一个非1的，乘他自己同时在 $[0, T_0]$ 积分，结果都为$\frac{T_0}{2}$</p>
+<p>有了以上结论 我们就能得出</p>
+$$\int_{0}^{T_0} f(x) \cos(k\omega_0 x) dx = \int_{0}^{T_0} B_0 \cos(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} B_u \cos(u\omega_0 x) \cos(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} C_u \sin(u\omega_0 x) \cos(k\omega_0 x) dx$$<p>只有当u=k时 右边能留下来一项 其他全为0 最终得到</p>
+$$B_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \cos(k\omega_0 x) dx$$<p>(3)算$C_k$</p>
+$$\int_{0}^{T_0} f(x) \sin(k\omega_0 x) dx = \int_{0}^{T_0} B_0 \sin(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} B_u \cos(u\omega_0 x) \sin(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} C_u \sin(u\omega_0 x) \sin(k\omega_0 x) dx$$<p>可得</p>
+$$C_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \sin(k\omega_0 x) dx$$<p>总结：若$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$</p>
+<p>则$B_0=\frac{1}{T_0}\int_{0}^{T_0}{f(x)dx}$</p>
+$$B_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \cos(k\omega_0 x) dx$$$$C_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \sin(k\omega_0 x) dx$$<p>以此解热传导方程可得</p>
+<p>$f(x,t)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)e^{-Kk^2\omega_0^2t}}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)e^{-Kk^2\omega_0^2t}}$</p>
+<p>另外 傅里叶级数还可以用复数表达</p>
+<h3 id="32傅里叶级数收敛性证明狄利赫里三条件">3.2傅里叶级数收敛性证明(狄利赫里三条件)
+</h3><p>傅里叶凭什么认为f(x)是这样的 级数发散怎么办</p>
+<p>那么就有了收敛性证明</p>
+<p>若 $f(x)$ 满足以下条件：</p>
+<p>① 一个周期绝对可积$\int_{0}^{T_0} |f(x)| dx &lt; +\infty$</p>
+<p>② 一个周期内$f(x)$极值有限</p>
+<p>③ 一个周期内间断点有限</p>
+<p>则 $f(x)$ 表示为这个公式，同时 $B_0, B_k, C_k$ 这样算是收敛的。</p>
+<p>吉布斯现象：方波无法完全变直 在跳变出会有一个尖峰</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/">信号与系统</a>
+        
+            <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: 'https:\/\/fantastic-stroopwafel-0bd8d0.netlify.app\/.netlify\/functions\/twikoo',
+        el: '#tcomment',lang: 'zh-CN',})
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Mhhhhhh
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script>
+    console.log("【强制脚本】正在启动...");
+
+    function runHitokoto() {
+        
+        let target = document.querySelector('.site-description') || 
+                     document.querySelector('.sidebar .subtitle');
+        
+        
+        if (!target) {
+            const allTags = document.querySelectorAll('span, p, div, h2');
+            for (let i = 0; i < allTags.length; i++) {
+                if (allTags[i].innerText.includes("异世界")) {
+                    target = allTags[i];
+                    break;
+                }
+            }
+        }
+
+        
+        if (target) {
+            console.log("【强制脚本】找到目标元素了！", target);
+            fetch('https://v1.hitokoto.cn/?c=a&c=b')
+                .then(response => response.json())
+                .then(data => {
+                    target.innerText = data.hitokoto + " —— " + data.from;
+                    console.log("【强制脚本】更新成功！");
+                })
+                .catch(err => console.error("【强制脚本】请求失败", err));
+        } else {
+            console.error("【强制脚本】没找到目标元素，无法更新台词。");
+        }
+    }
+
+    
+    setTimeout(runHitokoto, 1000);
+</script>
+    </body>
+</html>

@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>信号与系统 on Mhhhhhh</title>
+        <link>https://mhhhhhh.netlify.app/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</link>
+        <description>Recent content in 信号与系统 on Mhhhhhh</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Mhhhhhh</copyright>
+        <lastBuildDate>Mon, 24 Nov 2025 18:24:20 +0800</lastBuildDate><atom:link href="https://mhhhhhh.netlify.app/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>信号与系统笔记</title>
+        <link>https://mhhhhhh.netlify.app/p/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 24 Nov 2025 18:24:20 +0800</pubDate>
+        
+        <guid>https://mhhhhhh.netlify.app/p/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241745513.png" alt="Featured image of post 信号与系统笔记" /&gt;&lt;h1 id=&#34;信号与系统搭配2022胡浩基老师讲解&#34;&gt;信号与系统（搭配2022胡浩基老师讲解）
+&lt;/h1&gt;&lt;h2 id=&#34;第一章-信号与系统&#34;&gt;第一章 信号与系统
+&lt;/h2&gt;&lt;h3 id=&#34;0-附录积分表&#34;&gt;0 附录：积分表
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241450966.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;11信号的描述与信号的分类&#34;&gt;1.1信号的描述与信号的分类
+&lt;/h3&gt;&lt;h4 id=&#34;1基于信号维度的分类&#34;&gt;1.基于信号维度的分类
+&lt;/h4&gt;&lt;p&gt;一维信号（声音信号）&lt;/p&gt;
+&lt;p&gt;二维信号（图像信号，RGB编码）&lt;/p&gt;
+&lt;p&gt;三维信号（视频信号，给图像信号加一个时间轴/深度图（RGBD）&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241451083.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;)&lt;/p&gt;
+&lt;p&gt;在信号与系统中 我们只讨论一维的信号。&lt;/p&gt;
+&lt;h4 id=&#34;2一维信号的两种形式连续信号和离散信号&#34;&gt;2.一维信号的两种形式：连续信号和离散信号
+&lt;/h4&gt;&lt;p&gt;&lt;mark&gt;x(t):连续信号&lt;/mark&gt; 因变量随t变化而变化
+&lt;mark&gt;x[n]:离散信号&lt;/mark&gt; 其中 n为整数（他只是一个名字 为了表达的统一）&lt;/p&gt;
+&lt;p&gt;而对于x &lt;mark&gt;是信号的幅度（幅值、强度、大小等）&lt;/mark&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3周期信号与非周期信号&#34;&gt;3.周期信号与非周期信号
+&lt;/h4&gt;&lt;p&gt;x(t)=x(t+mT),m属于Z，T为最小正周期&lt;/p&gt;
+&lt;p&gt;x[n]=x[n+mN],m属于Z，N是一个自然数&lt;/p&gt;
+&lt;h4 id=&#34;4奇信号与偶信号对应于奇函数与偶函数&#34;&gt;4.奇信号与偶信号（对应于奇函数与偶函数）
+&lt;/h4&gt;&lt;p&gt;任意一个信号都可以被分为一个奇信号和一个偶信号，且拆法唯一&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241451970.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于离散信号 同理（仅仅只是连续信号取特殊值）&lt;/p&gt;
+&lt;p&gt;唯一性证明：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241452534.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;5功率信号和能量信号&#34;&gt;5.功率信号和能量信号
+&lt;/h4&gt;&lt;h5 id=&#34;能量与功率&#34;&gt;能量与功率：
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241452626.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;离散的求和和连续的积分 是一回事&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241452476.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;能量信号能量有限信号&#34;&gt;能量信号（能量有限信号）：
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453443.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;功率信号功率有限信号&#34;&gt;功率信号（功率有限信号）
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453333.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;12奇异信号&#34;&gt;1.2奇异信号
+&lt;/h3&gt;&lt;h4 id=&#34;1单位阶跃信号&#34;&gt;1.单位阶跃信号
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453662.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;需要注意的是，u(0)可以等于任意值&lt;/mark&gt;，第二章会涉及&lt;/p&gt;
+&lt;h4 id=&#34;2冲激信号&#34;&gt;2.冲激信号
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453664.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3抽样函数sat&#34;&gt;3.抽样函数Sa(t)
+&lt;/h4&gt;&lt;p&gt;前置证明&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241453705.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454584.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454708.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;接下来是对&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454793.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;的证明&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241454578.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;首先构造I(a) 求导消去t&lt;/p&gt;
+&lt;p&gt;由欧拉公式：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455317.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;将sint代换&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455636.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;然后 对于目前的式子 是可以积分的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455926.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;积分后是这样&lt;/p&gt;
+&lt;p&gt;即&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455210.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;接下来确定C&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455981.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;因为a为正无穷时 I(a)为0&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241455140.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;得证&lt;/p&gt;
+&lt;h3 id=&#34;13单位冲激序列和单位阶跃序列&#34;&gt;1.3单位冲激序列和单位阶跃序列
+&lt;/h3&gt;&lt;h4 id=&#34;1单位冲激序列&#34;&gt;1单位冲激序列
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456406.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;他和冲激信号有本质的区别 冲激信号是奇异信号 在0处为正无穷 在其他处为0 且从负无穷积分到正无穷值为1&lt;/p&gt;
+&lt;p&gt;而单位冲激序列是 在0处为1 其他为0 且求和值亦为1&lt;/p&gt;
+&lt;h4 id=&#34;2单位阶跃序列&#34;&gt;2.单位阶跃序列
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456621.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;和u[t]对应 但是离散 对比图如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456728.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;14信号的自变量变换&#34;&gt;1.4信号的自变量变换
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456040.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于x(3t+6):&lt;/p&gt;
+&lt;p&gt;1.化成标准形式：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241456803.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2.前有负号翻转：此题没有负号 所以不翻转&lt;/p&gt;
+&lt;p&gt;3.系数大于1 压缩 系数小于1 拉伸&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457653.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145706468&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;4.加号左移 减号右移&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457256.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145730660&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于x(-3t+6)&lt;/p&gt;
+&lt;p&gt;1.化为标准形式:x(-3(t-2))&lt;/p&gt;
+&lt;p&gt;2.前有负号翻转：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457967.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145744778&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;3.系数大于1，压缩；系数小于1，拉伸：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241457704.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145757534&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;4.加号左移，减号右移：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458935.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145809761&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;那么对于&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458395.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145820189&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;也很简单 只需要做一个变量代换,令u=3-2t 则又是上面的问题&lt;/p&gt;
+&lt;p&gt;对于单位阶跃信号，构成方波：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458036.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145835805&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;u(t)是大于0的都为1 u(t-t0)是大于t0的都为1 那么G(t)就是0到t0之间都为1&lt;/p&gt;
+&lt;p&gt;同理 对于单位阶跃序列：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241458788.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124145852586&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;因为在n=N时 也被减为0了 所以是N-1&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241721590.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172134387&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注意边界值&lt;/p&gt;
+&lt;p&gt;对于单位冲激序列：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241721450.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172146200&#34;
+	
+	
+&gt;只不过是每个项对应的单位冲激序列相加而已 也很简单&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;卷积公式&lt;/mark&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241723755.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172330556&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;16系统的基本性质&#34;&gt;1.6系统的基本性质
+&lt;/h3&gt;&lt;h4 id=&#34;1线性系统非线性系统&#34;&gt;&lt;mark&gt;1.线性系统（非线性系统）&lt;/mark&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241723586.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172341308&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;一为齐次性 二为叠加性 其中a为任意实数&lt;/p&gt;
+&lt;h5 id=&#34;齐次性证明&#34;&gt;齐次性证明
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724009.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172406822&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;由于对于任意的x(t) 所以有以下证明：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724586.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172415390&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;假设一个系统能将x(t)放大三倍&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724414.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251124172424241&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;那么ax(t)通过系统后输出什么呢？ 首先将ax(t)视作一整个x(t)通过系统后变成了三倍的ax(t) 即a[3x(t)] 即ay(t) 所以齐次性得证&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724374.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023194749872&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;叠加性证明&#34;&gt;叠加性证明
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724282.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023194957209&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;目前有这个&lt;/p&gt;
+&lt;p&gt;现在把x1 x2视作一包x 则：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724520.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023195032086&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;拆开后：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241724934.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023195048130&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;即为&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725518.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023195057575&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;满足叠加性 得证&lt;/p&gt;
+&lt;h5 id=&#34;yttxt为线性系统的证明&#34;&gt;&lt;mark&gt;y(t)=tx(t)为线性系统的证明&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725033.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023195535612&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;微分器系统ytdxtdt是线性系统的证明&#34;&gt;&lt;mark&gt;微分器系统（y(t)=dx(t)/dt）是线性系统的证明&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725864.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023200035356&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;积分器是线性系统的证明&#34;&gt;&lt;mark&gt;积分器是线性系统的证明：&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241725222.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023202340837&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ytxt1不是线性系统的证明&#34;&gt;&lt;mark&gt;y(t)=x(t)+1不是线性系统的证明&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726743.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023221931423&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ytxt2不是线性系统的证明&#34;&gt;&lt;mark&gt;y(t)=x(t)^2不是线性系统的证明&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726730.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023222414254&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;以上 离散均具有同样的性质&lt;/p&gt;
+&lt;h5 id=&#34;ynxn-xn-1离散微分器是线性系统的证明&#34;&gt;&lt;mark&gt;y[n]=x[n]-x[n-1]（离散微分器）是线性系统的证明&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726496.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023223458001&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;叠加性类似 都是令f[n]为要证的式子&lt;/p&gt;
+&lt;h5 id=&#34;离散积分器是线性系统自己证&#34;&gt;&lt;mark&gt;离散积分器是线性系统（自己证）&lt;/mark&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241726290.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023224048354&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;线性系统的判据&#34;&gt;线性系统的判据
+&lt;/h5&gt;&lt;p&gt;1.每一项都有x&lt;/p&gt;
+&lt;p&gt;2.每一项的x都是一次&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727965.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023224343121&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;拓展题&#34;&gt;拓展题
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727087.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251023224918462&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727848.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;下载&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2时不变系统时变系统&#34;&gt;&lt;mark&gt;2.时不变系统（时变系统）&lt;/mark&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727246.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251104231229755&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727884.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0342(20251104-235355)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241727654.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0343(20251105-000159)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;综上可得出时不变的判据：1.t只在x的括号里 2.t只能是t，不能是2t，-2t，t^2等其他函数&lt;/p&gt;
+&lt;h4 id=&#34;3因果系统非因果系统&#34;&gt;3.因果系统（非因果系统）
+&lt;/h4&gt;&lt;p&gt;定义：输出y(t)在输入x(t)之后发生（如果一个系统任何时刻输出只决定于现在和过去的输入，就称该系统为因果系统）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728014.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251105001014900&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728112.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251105001332029&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728834.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251105001509248&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;因果系统的判据：x括号里的数&lt;mark&gt;恒小于&lt;/mark&gt;y括号里的数&lt;/p&gt;
+&lt;h4 id=&#34;4稳定系统非稳定系统&#34;&gt;4.稳定系统（非稳定系统）
+&lt;/h4&gt;&lt;p&gt;x(t)-&amp;gt;y(t)&lt;/p&gt;
+&lt;p&gt;若x(t)有界-&amp;gt;y(t)有界&lt;/p&gt;
+&lt;p&gt;则稳定&lt;/p&gt;
+&lt;p&gt;①y(t)=e^x(t)^ -&amp;gt;稳定&lt;/p&gt;
+&lt;p&gt;当x(t)有界时 y(t)有界&lt;/p&gt;
+&lt;p&gt;②y(t)=x(t)^3^-2x(t)^2^+x(t)+1  -&amp;gt;稳定&lt;/p&gt;
+&lt;p&gt;③y(t)=$\frac{dx(t)}{dt}$   -&amp;gt;不稳定&lt;/p&gt;
+&lt;p&gt;若x(t)=u(t) 则y(t)=$\delta(t)$ 无界&lt;/p&gt;
+&lt;p&gt;④y(t)=$\int_{-\infty}^{t}{x(t)dt}$  -&amp;gt;不稳定&lt;/p&gt;
+&lt;p&gt;若x(t)=1 则y(t)=$+\infty$ 无界&lt;/p&gt;
+&lt;p&gt;⑤y[n]=$\sum_{k=-\infty}^{+\infty}{x[k]}$  -&amp;gt;不稳定&lt;/p&gt;
+&lt;p&gt;⑥y[n]=x[n]=x[n-1]  -&amp;gt;稳定&lt;/p&gt;
+&lt;h4 id=&#34;5无记忆系统记忆系统&#34;&gt;5.无记忆系统（记忆系统）
+&lt;/h4&gt;&lt;p&gt;一个系统无记忆，是指y(t)的值仅仅只依赖于x(t)的值&lt;/p&gt;
+&lt;p&gt;y(t)=x(t)^2^+e^x(t)^   -&amp;gt;   无记忆&lt;/p&gt;
+&lt;p&gt;y(t)=x(t-1)   -&amp;gt;   记忆&lt;/p&gt;
+&lt;p&gt;y[n]=x[n]^3^   -&amp;gt;   无记忆&lt;/p&gt;
+&lt;p&gt;y[n]=x[2n]   -&amp;gt;   记忆&lt;/p&gt;
+&lt;p&gt;判据：x与y括号里的数完全一样&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;无记忆系统一定是因果系统&lt;/mark&gt;&lt;/p&gt;
+&lt;h4 id=&#34;6可逆系统不可逆系统&#34;&gt;6.可逆系统（不可逆系统）
+&lt;/h4&gt;&lt;p&gt;x(t)能唯一写成y(t)的形式   -&amp;gt; 可逆&lt;/p&gt;
+&lt;p&gt;①y(t)=x(t-1) x(t)=y(t+1)   -&amp;gt;可逆&lt;/p&gt;
+&lt;p&gt;②y(t)=x(t)^2^  $x(t)=\pm\sqrt(y(t))$ -&amp;gt;不可逆&lt;/p&gt;
+&lt;p&gt;③y(t)=x(2t) x(t)=y(0.5t)   -&amp;gt;可逆&lt;/p&gt;
+&lt;p&gt;④y[n]=$\sum_{k=-\infty}^{n}{x[k]}$ x[n]=y[n]-y[n-1]  -&amp;gt;可逆&lt;/p&gt;
+&lt;p&gt;⑤y(t)=$\int_{-\infty}^{t}{x(t)dt}$ x(t)=$\frac{dy(t)}{dt}$   -&amp;gt;可逆&lt;/p&gt;
+&lt;p&gt;⑥y(t)=$\frac{dx(t)}{dt}$ x(t)=$\int_{-\infty}^{t}{y(t)dt+C}$   -&amp;gt;不可逆&lt;/p&gt;
+&lt;h2 id=&#34;第二章-连续系统的时域分析&#34;&gt;第二章 连续系统的时域分析
+&lt;/h2&gt;&lt;h3 id=&#34;21lti系统时域分析&#34;&gt;2.1LTI系统时域分析
+&lt;/h3&gt;&lt;p&gt;线性时不变系统（Linear Time-Invariant System）&lt;/p&gt;
+&lt;p&gt;如果一个系统既线性又时不变，我们就叫它线性时不变系统(LTI系统)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728424.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251117175819327&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;线性只是对现实问题的近似&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;LTI很简单 如果我们知道LTI的一个x(t)对应的y(t)那么我们就知道所有的x(t)对应的y(t)&lt;/p&gt;
+&lt;h3 id=&#34;22离散lti系统卷积公式推导&#34;&gt;2.2离散LTI系统卷积公式推导
+&lt;/h3&gt;&lt;p&gt;$\delta[n]$ -&amp;gt; h[n] (经过LTI系统)&lt;/p&gt;
+&lt;p&gt;$\delta[n]$ 是单位脉冲序列 h[n]是单位脉冲响应(LTI系统唯一的标识)&lt;/p&gt;
+&lt;p&gt;而若x[n] -&amp;gt; y[n] (任意x[n]经过上述的LTI系统)&lt;/p&gt;
+&lt;p&gt;y[n]=x[n]*h[n]&lt;/p&gt;
+&lt;p&gt;*为卷积(Convolution)&lt;/p&gt;
+&lt;p&gt;那么这个要怎么算才能比较快呢&lt;/p&gt;
+&lt;p&gt;一 列表法&lt;/p&gt;
+&lt;p&gt;①确定y[n]=x[n]*h[n]取值范围(y[n]最左边(最右边)=x[n]最左边(最右边)+h[n]最左边(最右边))&lt;/p&gt;
+&lt;p&gt;②&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241728069.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251117235153216&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;二 卷积计算公式&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;y[n]=$\sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$&lt;/mark&gt; 离散系统的卷积和 即&lt;mark&gt;y[n]=x[n]*h[n]&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;要证上式 先证明x[n]= $\sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241729578.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251119220306997&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;得证&lt;/p&gt;
+&lt;p&gt;然后&lt;/p&gt;
+&lt;p&gt;$\delta[n]-&amp;gt;h[n]$ h[n]是$\delta[n]$的响应&lt;/p&gt;
+&lt;p&gt;$\delta[n-k]-&amp;gt;h[n-k]$ 时不变系统&lt;/p&gt;
+&lt;p&gt;$x[k]\delta[n-k]-&amp;gt;x[k]h[n-k]$ 线性系统齐次性&lt;/p&gt;
+&lt;p&gt;$\sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}-&amp;gt;\sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$ 线性系统叠加性&lt;/p&gt;
+&lt;p&gt;而$\sum_{k=-\infty}^{\infty}{x[k]\delta[n-k]}=x[n]$&lt;/p&gt;
+&lt;p&gt;所以$x[n]-&amp;gt;\sum_{k=-\infty}^{\infty}{x[k]h[n-k]}$&lt;/p&gt;
+&lt;p&gt;得证&lt;/p&gt;
+&lt;p&gt;过程：翻转 平移 相乘 求和&lt;/p&gt;
+&lt;h3 id=&#34;23连续lti系统卷积公式&#34;&gt;2.3连续LTI系统卷积公式
+&lt;/h3&gt;&lt;p&gt;$x(t)=\int_{-\infty}^{+\infty}{x(\tau)\delta(t-\tau)d\tau}$&lt;/p&gt;
+&lt;p&gt;-&amp;gt;(通过LTI)&lt;/p&gt;
+&lt;p&gt;$y(t)=\int_{-\infty}^{+\infty}{x(\tau)h(t-\tau)d\tau}$&lt;/p&gt;
+&lt;p&gt;即$x(t)*h(t)=\int_{-\infty}^{+\infty}{x(\tau)h(t-\tau)d\tau}$&lt;/p&gt;
+&lt;h3 id=&#34;24冲激函数的性质&#34;&gt;2.4冲激函数的性质
+&lt;/h3&gt;&lt;h4 id=&#34;1int_-inftyinftydeltatdt1&#34;&gt;1.$\int_{-\infty}^{+\infty}{\delta(t)dt=1}$
+&lt;/h4&gt;&lt;h4 id=&#34;2int_-inftyinftyxtdeltatdtx0&#34;&gt;2.$\int_{-\infty}^{+\infty}{x(t)\delta(t)dt=x(0)}$
+&lt;/h4&gt;&lt;h4 id=&#34;3int_-inftyinftyxtdeltat-t_0xt_0&#34;&gt;3.$\int_{-\infty}^{+\infty}{x(t)\delta(t-t_0)=x(t_0)}$
+&lt;/h4&gt;&lt;h4 id=&#34;4xtdeltatx0deltat&#34;&gt;4.$x(t)\delta(t)=x(0)\delta(t)$
+&lt;/h4&gt;&lt;h4 id=&#34;5deltaatfrac1adeltat&#34;&gt;5.$\delta(at)=\frac{1}{|a|}\delta(t)$
+&lt;/h4&gt;&lt;h4 id=&#34;6deltaatbfrac1adeltatfracba&#34;&gt;6.$\delta(at+b)=\frac{1}{|a|}\delta(t+\frac{b}{a})$
+&lt;/h4&gt;&lt;h4 id=&#34;7deltaftsum_所有ft_00frac1ft0deltat-t_0&#34;&gt;7.$\delta(f(t))=\sum_{所有f(t_0)=0}{\frac{1}{|f&amp;rsquo;(t0)|}\delta(t-t_0)}$
+&lt;/h4&gt;&lt;h4 id=&#34;8-lim_omega-to-infty-fracsinomega-tpi-t--deltat&#34;&gt;8. $\lim_{\omega \to +\infty} \frac{\sin(\omega t)}{\pi t} = \delta(t)$
+&lt;/h4&gt;&lt;h4 id=&#34;9-lim_tau-to-infty-fractaupit2tau2--deltat&#34;&gt;9. $\lim_{\tau \to +\infty} \frac{\tau}{\pi(t^2+\tau^2)} = \delta(t)$
+&lt;/h4&gt;&lt;h3 id=&#34;25连续信号卷积的计算&#34;&gt;2.5连续信号卷积的计算
+&lt;/h3&gt;&lt;p&gt;和离散的一样&lt;/p&gt;
+&lt;p&gt;1.公式法&lt;/p&gt;
+&lt;p&gt;2.翻转 平移 相乘 求和&lt;/p&gt;
+&lt;h3 id=&#34;26卷积性质&#34;&gt;2.6卷积性质
+&lt;/h3&gt;&lt;p&gt;①交换律：$x(t)*h(t)=h(t)*x(t)$&lt;/p&gt;
+&lt;p&gt;②结合律：$[x(t)*h_1(t)]*h_2(t)=[x(t)*h_2(t)]*h_1(t)$&lt;/p&gt;
+&lt;p&gt;③分配律：$x(t)*[h_1(t)+h_2(t)]=x(t)*h_1(t)+x(t)*h_2(t)$&lt;/p&gt;
+&lt;p&gt;注意 积分和求和具有分配律&lt;/p&gt;
+&lt;h3 id=&#34;27补充知识&#34;&gt;2.7补充知识
+&lt;/h3&gt;&lt;p&gt;①同宽的矩阵方波卷积得三角波&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511241729150.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251120225441953&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;②$x(t)*u(t)=\int_{-\infty}^{t}{x(\tau)d\tau}$ 积分器&lt;/p&gt;
+&lt;p&gt;$x[n]*u[n]=\sum_{k=-\infty}^{n}{x[k]}$ 累加器&lt;/p&gt;
+&lt;p&gt;③冲激偶函数$\delta&amp;rsquo;(t)=\frac{d\delta(t)}{dt}$&lt;/p&gt;
+&lt;p&gt;$\int_{-\infty}^{+\infty}{x(t)\delta&amp;rsquo;(t)dt}=-x&amp;rsquo;(0)$&lt;/p&gt;
+&lt;p&gt;④$\frac{d[x(t)*h(t)]}{dt}=\frac{dx(t)}{dt}*h(t)=\frac{dh(t)}{dt}*x(t)$&lt;/p&gt;
+&lt;p&gt;⑤$x(t+t_0)*h(t-t_0)=x(t)*h(t)$&lt;/p&gt;
+&lt;p&gt;⑥定理：LTI系统稳定的充要条件是：$\int_{-\infty}^{+\infty}{|h(t)|dt}&amp;lt;+\infty 或 \sum_{k=-\infty}^{+\infty}{|h[n]|}&amp;lt;+\infty$&lt;/p&gt;
+&lt;h3 id=&#34;28lti系统因果的充要条件&#34;&gt;2.8LTI系统因果的充要条件
+&lt;/h3&gt;&lt;p&gt;$h(t)=0 当t&amp;lt;0时$&lt;/p&gt;
+&lt;p&gt;$或h[n]=0当n&amp;lt;0时$&lt;/p&gt;
+&lt;p&gt;勒贝格定义下 离散点不考虑&lt;/p&gt;
+&lt;h2 id=&#34;第三章-连续信号与系统的频域分析傅里叶变换&#34;&gt;第三章 连续信号与系统的频域分析（傅里叶变换）
+&lt;/h2&gt;&lt;h3 id=&#34;31傅里叶级数&#34;&gt;3.1傅里叶级数
+&lt;/h3&gt;&lt;p&gt;一开始的傅里叶级数是用来研究热传导的&lt;/p&gt;
+&lt;p&gt;热传导方程：&lt;/p&gt;
+&lt;p&gt;求f(x,t) 当t&amp;gt;0时&lt;/p&gt;
+&lt;p&gt;$\frac{\partial f}{\partial t}=K\frac{\partial^2f}{\partial x^2}$&lt;/p&gt;
+&lt;p&gt;$f(x,0)=f(x)$&lt;/p&gt;
+&lt;p&gt;这个难点在于f(x)的形式不定&lt;/p&gt;
+&lt;p&gt;我们能找到特例 来满足热传导方程：&lt;/p&gt;
+&lt;p&gt;①当$f(x)=B$时，$f(x,t)=B$&lt;/p&gt;
+&lt;p&gt;②当$f(x)=Bcos(\omega x)$时，$f(x,t)=Bcos(\omega x)e^{-K\omega^2t}$&lt;/p&gt;
+&lt;p&gt;③当$f(x)=Csin(\omega x)$时，$f(x,t)=Csin(\omega x)e^{-K\omega^2t}$&lt;/p&gt;
+&lt;p&gt;傅里叶发布了论热传导方程的解法&lt;/p&gt;
+&lt;p&gt;①如果$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$&lt;/p&gt;
+&lt;p&gt;则热传导方程的解是&lt;/p&gt;
+&lt;p&gt;$f(x,t)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)e^{-Kk^2\omega_0^2t}}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)e^{-Kk^2\omega_0^2t}}$&lt;/p&gt;
+&lt;p&gt;注意 所有sin和cos的频率 都是$\omega_0$的整数倍&lt;/p&gt;
+&lt;p&gt;我们叫$\omega_0$为基波频率 $k\omega_0$为k次谐波频率 $B_0$为直流分量 $T_0=\frac{2\pi}{\omega_0}$为基波周期&lt;/p&gt;
+&lt;p&gt;那么 如何根据f(x)算出$B_0$ 所有的$B_k$和$C_k$呢&lt;/p&gt;
+&lt;p&gt;(1)算$B_0$&lt;/p&gt;
+&lt;p&gt;首先 ①$\int_{0}^{T_0}{cos(k\omega_0x)dx}=0$ ②$\int_{0}^{T_0}{cos(k\omega_0x)dx}=0$&lt;/p&gt;
+&lt;p&gt;那么我们对$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$&lt;/p&gt;
+&lt;p&gt;两边从0到$T_0$积分 得到$\int_{0}^{T_0}{f(x)dx}=B_0T_0$&lt;/p&gt;
+&lt;p&gt;所以$B_0=\frac{1}{T_0}\int_{0}^{T_0}{f(x)dx}$&lt;/p&gt;
+&lt;p&gt;(2)算$B_k$&lt;/p&gt;
+&lt;p&gt;首先①$\int_{0}^{T_0}{cos(k_1\omega_0x)cos(k_2\omega_0x)dx}=0 (k_1\neq k_2)$&lt;/p&gt;
+&lt;p&gt;还有②$\int_{0}^{T_0}{cos(k_1\omega_0x)sin(k_2\omega_0x)dx}=0 (k_1\neq k_2)$&lt;/p&gt;
+&lt;p&gt;并且③$\int_{0}^{T_0}{sin(k_1\omega_0x)sin(k_2\omega_0x)dx}=0 (k_1\neq k_2)$&lt;/p&gt;
+&lt;p&gt;另外④$\int_{0}^{T_0}{cos^2(k\omega_0x)}=\frac{T_0}{2}$ $\int_{0}^{T_0}{sin^2(k\omega_0x)}=\frac{T_0}{2}$&lt;/p&gt;
+&lt;p&gt;总结一下(1)和(2)的前置公式&lt;/p&gt;
+&lt;p&gt;从 $1, \cos(\omega_0 x), \cos(2\omega_0 x), \cos(3\omega_0 x) \cdots$&lt;/p&gt;
+&lt;p&gt;$\sin(\omega_0 x), \sin(2\omega_0 x), \sin(3\omega_0 x) \cdots$&lt;/p&gt;
+&lt;p&gt;任取两个，相乘同时在 $[0, T_0]$ 积分，结果都为 $0$&lt;/p&gt;
+&lt;p&gt;任选一个非1的，乘他自己同时在 $[0, T_0]$ 积分，结果都为$\frac{T_0}{2}$&lt;/p&gt;
+&lt;p&gt;有了以上结论 我们就能得出&lt;/p&gt;
+$$\int_{0}^{T_0} f(x) \cos(k\omega_0 x) dx = \int_{0}^{T_0} B_0 \cos(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} B_u \cos(u\omega_0 x) \cos(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} C_u \sin(u\omega_0 x) \cos(k\omega_0 x) dx$$&lt;p&gt;只有当u=k时 右边能留下来一项 其他全为0 最终得到&lt;/p&gt;
+$$B_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \cos(k\omega_0 x) dx$$&lt;p&gt;(3)算$C_k$&lt;/p&gt;
+$$\int_{0}^{T_0} f(x) \sin(k\omega_0 x) dx = \int_{0}^{T_0} B_0 \sin(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} B_u \cos(u\omega_0 x) \sin(k\omega_0 x) dx + \sum_{u=1}^{+\infty} \int_{0}^{T_0} C_u \sin(u\omega_0 x) \sin(k\omega_0 x) dx$$&lt;p&gt;可得&lt;/p&gt;
+$$C_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \sin(k\omega_0 x) dx$$&lt;p&gt;总结：若$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$&lt;/p&gt;
+&lt;p&gt;则$B_0=\frac{1}{T_0}\int_{0}^{T_0}{f(x)dx}$&lt;/p&gt;
+$$B_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \cos(k\omega_0 x) dx$$$$C_k = \frac{2}{T_0} \int_{0}^{T_0} f(x) \sin(k\omega_0 x) dx$$&lt;p&gt;以此解热传导方程可得&lt;/p&gt;
+&lt;p&gt;$f(x,t)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)e^{-Kk^2\omega_0^2t}}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)e^{-Kk^2\omega_0^2t}}$&lt;/p&gt;
+&lt;p&gt;另外 傅里叶级数还可以用复数表达&lt;/p&gt;
+&lt;h3 id=&#34;32傅里叶级数收敛性证明狄利赫里三条件&#34;&gt;3.2傅里叶级数收敛性证明(狄利赫里三条件)
+&lt;/h3&gt;&lt;p&gt;傅里叶凭什么认为f(x)是这样的 级数发散怎么办&lt;/p&gt;
+&lt;p&gt;那么就有了收敛性证明&lt;/p&gt;
+&lt;p&gt;若 $f(x)$ 满足以下条件：&lt;/p&gt;
+&lt;p&gt;① 一个周期绝对可积$\int_{0}^{T_0} |f(x)| dx &amp;lt; +\infty$&lt;/p&gt;
+&lt;p&gt;② 一个周期内$f(x)$极值有限&lt;/p&gt;
+&lt;p&gt;③ 一个周期内间断点有限&lt;/p&gt;
+&lt;p&gt;则 $f(x)$ 表示为这个公式，同时 $B_0, B_k, C_k$ 这样算是收敛的。&lt;/p&gt;
+&lt;p&gt;吉布斯现象：方波无法完全变直 在跳变出会有一个尖峰&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

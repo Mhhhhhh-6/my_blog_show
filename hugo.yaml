@@ -247,13 +247,10 @@ markup:
                 enable: true
                 delimiters:
                     block:
-                        - - \[
-                          - \]
-                        - - $$
-                          - $$
+                        - ['\[', '\]']
+                        - ['$$', '$$']
                     inline:
-                        - - \(
-                          - \)
+                        - ['\(', '\)']
         renderer:
             ## Set to true if you have HTML content inside Markdown
             unsafe: true
