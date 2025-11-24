@@ -619,6 +619,44 @@ $f(x,t)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)e^{-Kk^2\omega_0^2t}}+\sum_{k
 
 另外 傅里叶级数还可以用复数表达
 
+$x(t)=\sum_{k=-\infty}^{+\infty}{a_ke^{jk\omega_0t}}$ $\omega_0=\frac{2\pi}{T_0}$
+
+$ a_k = \frac{1}{T_0} \int_{0}^{T_0} x(t) e^{-jk\omega_0 t} dt $
+
+怎么来的呢？
+
+首先有欧拉公式
+
+$$e^{j\theta} = \cos \theta + j \sin \theta$$
+
+$$\cos \theta = \frac{e^{j\theta} + e^{-j\theta}}{2}$$
+
+$$\sin \theta = \frac{e^{j\theta} - e^{-j\theta}}{2j} = -j \frac{e^{j\theta} - e^{-j\theta}}{2}$$
+
+再将$f(x)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)}+\sum_{k=1}^{+\infty}{C_ksin(k\omega_0x)}$中的cos和sin用欧拉公式带换掉
+
+$$\begin{aligned} f(x) &= B_0 + \sum_{k=1}^{+\infty} \left[ B_k \frac{e^{jk\omega_0 x} + e^{-jk\omega_0 x}}{2} + C_k \frac{e^{jk\omega_0 x} - e^{-jk\omega_0 x}}{2j} \right] \\ \end{aligned}$$
+
+整理合并后
+
+$$\begin{aligned} f(x) &= B_0 + \sum_{k=1}^{+\infty} \left[ \frac{B_k - jC_k}{2} e^{jk\omega_0 x} + \frac{B_k + jC_k}{2} e^{-jk\omega_0 x} \right] \end{aligned}$$
+
+观察到 此时的f(x)有正指数项和负指数项 那么构造出来一个$a_k$ 其范围从负无穷到正无穷 那么有
+
+$当新系数a_k的k>0时$ $对应的a_k应为正指数系数$ $即a_k= \frac{B_k - jC_k}{2}$
+
+$当新系数a_k的k<0时$ $对应的a_k应为负指数系数$ $即a_k= \frac{B_{-k} + jC_{-k}}{2}$
+
+$当新系数a_k的k=0时$ $对应的a_k应为直流分量$ $即a_k= B_0$
+
+$最终f(x)=\sum_{k=-\infty}^{+\infty}{a_ke^{jk\omega_0x}}$
+
+$以此也可以得出 a_k = \frac{1}{T_0} \int_{0}^{T_0} f(x) e^{-jk\omega_0 x} dx $
+
+$并且 我们还可以转换形式：B_0=a_0(k=0),B_k=a_k+a_{-k},C_k=j(a_k-a_{-k})$
+
+但主要掌握复数的表达形式
+
 
 
 ### 3.2傅里叶级数收敛性证明(狄利赫里三条件)
@@ -635,9 +673,123 @@ $f(x,t)=B_0+\sum_{k=1}^{+\infty}{B_kcos(k\omega_0x)e^{-Kk^2\omega_0^2t}}+\sum_{k
 
 ③ 一个周期内间断点有限
 
-则 $f(x)$ 表示为这个公式，同时 $B_0, B_k, C_k$ 这样算是收敛的。
+则 $f(x)$ 表示为这个公式，同时 $B_0, B_k, C_k$ 这样算是收敛的。(吉布斯现象：方波无法完全变直 在跳变出会有一个尖峰)
 
-吉布斯现象：方波无法完全变直 在跳变出会有一个尖峰
+在此 有三个引理
+
+①$$ \begin{aligned} \lim_{N \to +\infty} \int_{0}^{T_0} x(t) \sin(Nt) dt &= 0 \\ \lim_{N \to +\infty} \int_{0}^{T_0} x(t) \cos(Nt) dt &= 0 \end{aligned} $$
+
+②$$
+\int_{-\infty}^{+\infty} \frac{\sin(\omega t)}{t} dt = \pi \quad (\omega > 0)
+$$
+
+③$\lim_{\omega \to +\infty} \frac{\sin(\omega t)}{\pi t} = \delta(t)$
+
+详细证明狄利赫里可看胡浩基老师的原视频 非常的顺畅 这里就不写了
 
 
+
+### 3.3函数的正交分解
+
+一个函数族： $1, \cos(\omega_0 x), \cos(2\omega_0 x), \cos(3\omega_0 x) \cdots$
+
+$\sin(\omega_0 x), \sin(2\omega_0 x), \sin(3\omega_0 x) \cdots$
+
+任取两个，相乘同时在 $[0, T_0]$ 积分，结果都为 $0$
+
+任选一个非1的，乘他自己同时在 $[0, T_0]$ 积分，结果都为$\frac{T_0}{2}$
+
+我们把一族函数$e_i(t)_{i=1-100}$ 任取两个$e_i(t)e_j(t)$相乘并积分为0，则称$e_i(t)_{i=1-100}$为正交函数族 上面那个就是正交函数族
+
+内积：若一个运算<·> 满足以下性质
+
+1.交换律：<x,y>=<y,x>' ('代表共轭)
+
+2.齐次性：<ax,y>=a<x,y>
+
+3.叠加性：<x+y,z>=<x,z>+<y,z>
+
+4.非负性：<x,x> >= 0 当且仅当x=0时，<0,0> = 0
+
+把此运算叫做内积
+
+定义：$$ \langle f(t), g(t) \rangle = \int_{-\infty}^{+\infty} f(t) \cdot g^*(t) \, dt $$
+
+$$ \langle x[n], y[n] \rangle = \sum_{n=-\infty}^{+\infty} x[n] \cdot y^*[n] $$
+
+正交函数族的严格定义：
+
+设有一组函数集合 $\{\phi_1(t), \phi_2(t), \dots, \phi_n(t), \dots\}$，定义在区间 $(t_1, t_2)$ 上。如果它们满足以下条件，则称其为**正交函数族**
+
+$$ \int_{t_1}^{t_2} \phi_m(t) \phi_n^*(t) dt =  \begin{cases}  0, & m \neq n \quad (\text{正交性}) \\ E_n, & m = n \quad (\text{自身能量}) \end{cases} $$
+
+
+
+标准正交基：
+
+$$ \langle \phi_m(t), \phi_n(t) \rangle = \int_{t_1}^{t_2} \phi_m(t) \phi_n^*(t) dt = \delta_{mn} =  \begin{cases}  1, & m = n \\ 0, & m \neq n  \end{cases} $$
+
+
+
+正交基的标准化：
+
+1.计算每个基函数的能量（或者说模的平方）：
+
+$$E_n = \langle \phi_n, \phi_n \rangle = \int \phi_n(t) \phi_n^*(t) dt$$
+
+2.将原函数除以能量的平方根（即范数）：
+
+$$\psi_n(t) = \frac{\phi_n(t)}{\sqrt{E_n}}$$
+
+此时的新基底 $\{\psi_n(t)\}$ 就是标准正交基
+
+
+
+对于傅里叶级数
+
+$$ \int_{0}^{T_0} e^{jm\omega_0 t} \cdot (e^{jn\omega_0 t})^* dt =  \begin{cases}  0, & m \neq n \\ T_0, & m = n \end{cases} $$
+
+$$ \begin{aligned} x(t) &= \sum_{k=-\infty}^{+\infty} a_k e^{jk\omega_0 t} \\ \text{两边同取内积：} \quad \langle x(t), e^{jk\omega_0 t} \rangle &= \left\langle \sum_{n=-\infty}^{+\infty} a_n e^{jn\omega_0 t}, e^{jk\omega_0 t} \right\rangle \\ &= \sum_{n=-\infty}^{+\infty} a_n \underbrace{\langle e^{jn\omega_0 t}, e^{jk\omega_0 t} \rangle}_{\text{仅当 } n=k \text{ 时为 } T_0 \text{，其余为 } 0} \\ &= a_k \cdot T_0 \\ \text{移项得：} \quad a_k &= \frac{1}{T_0} \langle x(t), e^{jk\omega_0 t} \rangle \\ &= \frac{1}{T_0} \int_{0}^{T_0} x(t) \overline{e^{jk\omega_0 t}} dt \\ &= \frac{1}{T_0} \int_{0}^{T_0} x(t) e^{-jk\omega_0 t} dt \end{aligned} $$
+
+ 
+
+对于哈尔小波：
+
+![image-20251124233229300](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511242332570.png)
+
+同样的 他也是正交基 任取两个相乘并积分为0
+
+
+
+对于勒让多项式：$1, x, x^2, x^3, \dots$ 是一组多项式基底，但它们**不是**正交的 数学家勒让德找到了一组特殊的方法，把这些普通的多项式进行了“改造”（类似于格拉姆-施密特正交化过程），得到了一组全新的多项式序列，记为 $P_n(x)$。
+
+在区间 $x \in [-1, 1]$ 上，对于任意两个不同阶数 $m \neq n$ 的勒让德多项式，它们的内积为 0：$$ \int_{-1}^{1} P_m(x) P_n(x) dx = 0 \quad (m \neq n) $$
+
+注意：它们默认不是标准正交的。它们自身的能量（模的平方）是：
+
+$$\int_{-1}^{1} [P_n(x)]^2 dx = \frac{2}{2n+1}$$
+
+勒让多项式的通项：$$ P_n(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} [(x^2 - 1)^n] $$  (它的意思就是把 $(x^2-1)^n$ 这个东西连续求 $n$ 次导数，再乘个系数。)
+
+总结：如果说傅里叶级数是用“正弦波”作为积木来搭信号，哈尔小波是用“小方块”来搭信号，那么勒让德多项式就是用“不同次幂的曲线（多项式）”来搭信号。
+
+施密特正交化：若有一组非正交基 将其变为正交基的过程就是施密特正交化
+
+1. $$ \mathbf{u}_1 = \mathbf{v}_1 $$
+
+2. $$\text{新向量} = \text{旧向量} - \text{旧向量在基准方向上的投影}$$
+
+ $$ \mathbf{u}_2 = \mathbf{v}_2 - \text{proj}_{\mathbf{u}_1}(\mathbf{v}_2) = \mathbf{v}_2 - \frac{\langle \mathbf{v}_2, \mathbf{u}_1 \rangle}{\langle \mathbf{u}_1, \mathbf{u}_1 \rangle} \mathbf{u}_1 $$
+
+3. $$ \mathbf{u}_3 = \mathbf{v}_3 - \text{proj}_{\mathbf{u}_1}(\mathbf{v}_3) - \text{proj}_{\mathbf{u}_2}(\mathbf{v}_3) = \mathbf{v}_3 - \frac{\langle \mathbf{v}_3, \mathbf{u}_1 \rangle}{\langle \mathbf{u}_1, \mathbf{u}_1 \rangle} \mathbf{u}_1 - \frac{\langle \mathbf{v}_3, \mathbf{u}_2 \rangle}{\langle \mathbf{u}_2, \mathbf{u}_2 \rangle} \mathbf{u}_2 $$
+
+ $$ \mathbf{u}_k = \mathbf{v}_k - \sum_{j=1}^{k-1} \text{proj}_{\mathbf{u}_j}(\mathbf{v}_k) = \mathbf{v}_k - \sum_{j=1}^{k-1} \frac{\langle \mathbf{v}_k, \mathbf{u}_j \rangle}{\langle \mathbf{u}_j, \mathbf{u}_j \rangle} \mathbf{u}_j $$
+
+4. $$ \mathbf{e}_k = \frac{\mathbf{u}_k}{||\mathbf{u}_k||} = \frac{\mathbf{u}_k}{\sqrt{\langle \mathbf{u}_k, \mathbf{u}_k \rangle}} $$
+
+
+
+对于主成分分析（PCA）：给一堆人脸 通过训练的方式 给出一组正交基
+
+### 3.4连续时间周期信号的傅里叶变换
 
