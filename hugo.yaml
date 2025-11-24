@@ -83,8 +83,8 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: false
-        provider: disqus
+        enabled: true
+        provider: twikoo
 
         disqusjs:
             shortname:
@@ -133,10 +133,10 @@ params:
                 placeholder:
 
         twikoo:
-            envId:
+            envId: "https://fantastic-stroopwafel-0bd8d0.netlify.app/.netlify/functions/twikoo"
             region:
             path:
-            lang:
+            lang: "zh-CN"
 
         # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
         cactus:
