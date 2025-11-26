@@ -918,7 +918,166 @@ $$ \mathbf{u}_k = \mathbf{v}_k - \sum_{j=1}^{k-1} \text{proj}_{\mathbf{u}_j}(\ma
 &lt;/ol&gt;
 &lt;p&gt;对于主成分分析（PCA）：给一堆人脸 通过训练的方式 给出一组正交基&lt;/p&gt;
 &lt;h3 id=&#34;34连续时间周期信号的傅里叶变换&#34;&gt;3.4连续时间周期信号的傅里叶变换
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;傅里叶变换认为：&lt;strong&gt;任何非周期性的连续信号，都可以看作是无限多个不同频率、不同振幅的复指数信号（正弦波）的叠加。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果有一个连续时间信号 $f(t)$，且满足狄里赫利条件，那么它的傅里叶变换 $F(\omega)$ 定义为：&lt;/p&gt;
+$$F(\omega) = \mathcal{F}[f(t)] = \int_{-\infty}^{+\infty} f(t) e^{-j\omega t} \, dt$$&lt;p&gt;$F(\omega)$：信号的&lt;strong&gt;频谱&lt;/strong&gt;函数，通常是一个复数，包含&lt;strong&gt;幅度谱&lt;/strong&gt;和&lt;strong&gt;相位谱&lt;/strong&gt;信息。&lt;/p&gt;
+&lt;p&gt;如果我们已知频域函数 $F(\omega)$，想还原回时域信号 $f(t)$，公式为：&lt;/p&gt;
+$$f(t) = \mathcal{F}^{-1}[F(\omega)] = \frac{1}{2\pi} \int_{-\infty}^{+\infty} F(\omega) e^{j\omega t} \, d\omega$$&lt;p&gt;这个操作叫做傅里叶逆变换&lt;/p&gt;
+&lt;p&gt;为什么傅里叶变换后就能展示频域呢&lt;/p&gt;
+&lt;p&gt;实际上 傅里叶变换就是拿着未知信号f(t)和各个$k\omega_0$的复指数信号$e^{j\omega t}$ 做内积&lt;/p&gt;
+&lt;p&gt;内积越大 相似程度越高 说明有越多的该基信号 以此 便展示了频域&lt;/p&gt;
+&lt;p&gt;$f(t)$ 描述的是信号&lt;strong&gt;在不同时刻发生了什么&lt;/strong&gt;。 $F(\omega)$ 描述的是信号&lt;strong&gt;由哪些频率成分组成&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;算出来的 $F(\omega)$ 的值（模长），就代表了在该频率 $\omega$ 下，信号的能量或强度有多大&lt;/p&gt;
+&lt;h4 id=&#34;经典例题&#34;&gt;经典例题
+&lt;/h4&gt;&lt;h5 id=&#34;1-e-atut-stackrelftlongleftrightarrow-frac1a--jomega--a--0&#34;&gt;1. $e^{-at}u(t) \stackrel{FT}{\longleftrightarrow} \frac{1}{a + j\omega}$  $a &amp;gt; 0$
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511252341499.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0361(20251125-234052)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;实际上 他是个低通滤波器 频率低时信号强 频率高时信号弱&lt;/p&gt;
+&lt;p&gt;并且 当$\omega=\sqrt{3a}$时 信号为$\frac{1}{2a}$ 此时的频率为滤波器的截止频率 即$\sqrt{3a}$。&lt;/p&gt;
+&lt;p&gt;幅度衰减到最高点的一半 称为幅度衰减3dB&lt;/p&gt;
+&lt;h5 id=&#34;2deltat-stackrelftlongleftrightarrow-1&#34;&gt;2.$\delta(t) \stackrel{FT}{\longleftrightarrow} 1$
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511252358218.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0362(20251125-235756)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;3-1-stackrelftlongleftrightarrow-2pideltaomega&#34;&gt;3. $1 \stackrel{FT}{\longleftrightarrow} 2\pi\delta(\omega)$
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262159672.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0363(20251126-215856)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262159121.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0364(20251126-215912)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;4image-20251126220209592&#34;&gt;4.&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262202860.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251126220209592&#34;
+	
+	
+&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262211175.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0365(20251126-221114)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;实际上 你会发现 Sa外的系数是矩形窗函数的面积  Sa内的系数是边上那个数字&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262237089.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0367(20251126-223635)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;如果给的是sin的样子 也能很快的转换&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262303848.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0368(20251126-230327)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;5image-20251126220310277&#34;&gt;5.&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262203550.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251126220310277&#34;
+	
+	
+&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262222458.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0366(20251126-222240)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于4 5来说：方波与Sa互为傅里叶变换&lt;/p&gt;
+&lt;h5 id=&#34;6ut-xrightarrowf-frac1jomega--pi-deltaomega&#34;&gt;6.$u(t) \xrightarrow{F} \frac{1}{j\omega} + \pi \delta(\omega)$
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511270014175.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0369(20251127-001429)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;7&#34;&gt;7.&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511270029467.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;/h5&gt;&lt;p&gt;即&lt;/p&gt;
+$$\cos(\omega_0 t) \xrightarrow{F} \pi[\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$$$$\sin(\omega_0 t) \xrightarrow{F} -j\pi[\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$$&lt;p&gt;对于$\cos(\omega_0 t)$的推导：&lt;/p&gt;
+&lt;p&gt;1.利用欧拉公式展开：&lt;/p&gt;
+$$\cos(\omega_0 t) = \frac{1}{2} (e^{j\omega_0 t} + e^{-j\omega_0 t})$$&lt;p&gt;2.对两边同时做傅里叶变换（利用线性性质）：$\mathcal{F}[\cos(\omega_0 t)] = \frac{1}{2} \mathcal{F}[e^{j\omega_0 t}] + \frac{1}{2} \mathcal{F}[e^{-j\omega_0 t}]$&lt;/p&gt;
+&lt;p&gt;3.代入指数函数的变换公式：&lt;/p&gt;
+&lt;p&gt;$e^{j\omega_0 t} \xrightarrow{F} 2\pi\delta(\omega - \omega_0)$&lt;br&gt;
+$e^{-j\omega_0 t} \xrightarrow{F} 2\pi\delta(\omega + \omega_0)$&lt;/p&gt;
+&lt;p&gt;则上式为$= \frac{1}{2} [2\pi\delta(\omega - \omega_0)] + \frac{1}{2} [2\pi\delta(\omega + \omega_0)]$&lt;/p&gt;
+&lt;p&gt;4.化简得到最终结果：&lt;/p&gt;
+&lt;p&gt;$= \pi[\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$&lt;/p&gt;
+&lt;p&gt;对于$\sin(\omega_0 t)$的推导：&lt;/p&gt;
+&lt;p&gt;1.利用欧拉公式展开：&lt;/p&gt;
+&lt;p&gt;$\sin(\omega_0 t) = \frac{1}{2j} (e^{j\omega_0 t} - e^{-j\omega_0 t})$&lt;/p&gt;
+&lt;p&gt;2.对两边同时做傅里叶变换（利用线性性质）：&lt;/p&gt;
+&lt;p&gt;$\mathcal{F}[\sin(\omega_0 t)] = \frac{1}{2j} \mathcal{F}[e^{j\omega_0 t}] - \frac{1}{2j} \mathcal{F}[e^{-j\omega_0 t}]$&lt;/p&gt;
+&lt;p&gt;3.代入指数函数的变换公式：&lt;/p&gt;
+&lt;p&gt;$= \frac{1}{2j} [2\pi\delta(\omega - \omega_0)] - \frac{1}{2j} [2\pi\delta(\omega + \omega_0)]$&lt;/p&gt;
+&lt;p&gt;4.化简&lt;/p&gt;
+&lt;p&gt;$= \frac{\pi}{j} [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$&lt;/p&gt;
+&lt;p&gt;$= -j\pi [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$&lt;/p&gt;
+</description>
         </item>
         
     </channel>

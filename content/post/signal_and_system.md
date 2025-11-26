@@ -793,3 +793,126 @@ $$\int_{-1}^{1} [P_n(x)]^2 dx = \frac{2}{2n+1}$$
 
 ### 3.4连续时间周期信号的傅里叶变换
 
+傅里叶变换认为：**任何非周期性的连续信号，都可以看作是无限多个不同频率、不同振幅的复指数信号（正弦波）的叠加。**
+
+如果有一个连续时间信号 $f(t)$，且满足狄里赫利条件，那么它的傅里叶变换 $F(\omega)$ 定义为：
+
+$$F(\omega) = \mathcal{F}[f(t)] = \int_{-\infty}^{+\infty} f(t) e^{-j\omega t} \, dt$$
+
+$F(\omega)$：信号的**频谱**函数，通常是一个复数，包含**幅度谱**和**相位谱**信息。
+
+
+
+如果我们已知频域函数 $F(\omega)$，想还原回时域信号 $f(t)$，公式为：
+
+$$f(t) = \mathcal{F}^{-1}[F(\omega)] = \frac{1}{2\pi} \int_{-\infty}^{+\infty} F(\omega) e^{j\omega t} \, d\omega$$
+
+这个操作叫做傅里叶逆变换
+
+
+
+为什么傅里叶变换后就能展示频域呢
+
+实际上 傅里叶变换就是拿着未知信号f(t)和各个$k\omega_0$的复指数信号$e^{j\omega t}$ 做内积
+
+内积越大 相似程度越高 说明有越多的该基信号 以此 便展示了频域
+
+$f(t)$ 描述的是信号**在不同时刻发生了什么**。 $F(\omega)$ 描述的是信号**由哪些频率成分组成**。
+
+算出来的 $F(\omega)$ 的值（模长），就代表了在该频率 $\omega$ 下，信号的能量或强度有多大
+
+#### 经典例题
+
+##### 1. $e^{-at}u(t) \stackrel{FT}{\longleftrightarrow} \frac{1}{a + j\omega}$  $a > 0$
+
+![IMG_0361(20251125-234052)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511252341499.PNG)
+
+实际上 他是个低通滤波器 频率低时信号强 频率高时信号弱
+
+并且 当$\omega=\sqrt{3a}$时 信号为$\frac{1}{2a}$ 此时的频率为滤波器的截止频率 即$\sqrt{3a}$。
+
+幅度衰减到最高点的一半 称为幅度衰减3dB
+
+##### 2.$\delta(t) \stackrel{FT}{\longleftrightarrow} 1$
+
+![IMG_0362(20251125-235756)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511252358218.PNG)
+
+##### 3. $1 \stackrel{FT}{\longleftrightarrow} 2\pi\delta(\omega)$
+
+![IMG_0363(20251126-215856)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262159672.PNG)
+
+![IMG_0364(20251126-215912)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262159121.PNG)
+
+##### 4.![image-20251126220209592](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262202860.png)
+
+![IMG_0365(20251126-221114)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262211175.PNG)
+
+实际上 你会发现 Sa外的系数是矩形窗函数的面积  Sa内的系数是边上那个数字
+
+![IMG_0367(20251126-223635)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262237089.PNG)
+
+如果给的是sin的样子 也能很快的转换
+
+![IMG_0368(20251126-230327)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262303848.PNG)
+
+##### 5.![image-20251126220310277](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262203550.png)
+
+![IMG_0366(20251126-222240)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511262222458.PNG)
+
+对于4 5来说：方波与Sa互为傅里叶变换  
+
+##### 6.$u(t) \xrightarrow{F} \frac{1}{j\omega} + \pi \delta(\omega)$
+
+ ![IMG_0369(20251127-001429)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511270014175.PNG)
+
+##### 7.![](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511270029467.png)
+
+即
+
+$$\cos(\omega_0 t) \xrightarrow{F} \pi[\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$$
+
+$$\sin(\omega_0 t) \xrightarrow{F} -j\pi[\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$$
+
+
+
+对于$\cos(\omega_0 t)$的推导：
+
+1.利用欧拉公式展开：
+
+$$\cos(\omega_0 t) = \frac{1}{2} (e^{j\omega_0 t} + e^{-j\omega_0 t})$$
+
+2.对两边同时做傅里叶变换（利用线性性质）：$\mathcal{F}[\cos(\omega_0 t)] = \frac{1}{2} \mathcal{F}[e^{j\omega_0 t}] + \frac{1}{2} \mathcal{F}[e^{-j\omega_0 t}]$
+
+3.代入指数函数的变换公式：
+
+$e^{j\omega_0 t} \xrightarrow{F} 2\pi\delta(\omega - \omega_0)$  
+$e^{-j\omega_0 t} \xrightarrow{F} 2\pi\delta(\omega + \omega_0)$
+
+则上式为$= \frac{1}{2} [2\pi\delta(\omega - \omega_0)] + \frac{1}{2} [2\pi\delta(\omega + \omega_0)]$
+
+4.化简得到最终结果：
+
+$= \pi[\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$
+
+
+
+对于$\sin(\omega_0 t)$的推导：
+
+1.利用欧拉公式展开：
+
+$\sin(\omega_0 t) = \frac{1}{2j} (e^{j\omega_0 t} - e^{-j\omega_0 t})$
+
+2.对两边同时做傅里叶变换（利用线性性质）：
+
+$\mathcal{F}[\sin(\omega_0 t)] = \frac{1}{2j} \mathcal{F}[e^{j\omega_0 t}] - \frac{1}{2j} \mathcal{F}[e^{-j\omega_0 t}]$
+
+3.代入指数函数的变换公式：
+
+$= \frac{1}{2j} [2\pi\delta(\omega - \omega_0)] - \frac{1}{2j} [2\pi\delta(\omega + \omega_0)]$
+
+4.化简
+
+$= \frac{\pi}{j} [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$
+
+$= -j\pi [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$
+
