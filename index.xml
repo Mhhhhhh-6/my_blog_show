@@ -927,6 +927,8 @@ $$f(t) = \mathcal{F}^{-1}[F(\omega)] = \frac{1}{2\pi} \int_{-\infty}^{+\infty} F
 &lt;p&gt;实际上 傅里叶变换就是拿着未知信号f(t)和各个$k\omega_0$的复指数信号$e^{j\omega t}$ 做内积&lt;/p&gt;
 &lt;p&gt;内积越大 相似程度越高 说明有越多的该基信号 以此 便展示了频域&lt;/p&gt;
 &lt;p&gt;$f(t)$ 描述的是信号&lt;strong&gt;在不同时刻发生了什么&lt;/strong&gt;。 $F(\omega)$ 描述的是信号&lt;strong&gt;由哪些频率成分组成&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;$X(j\omega) = |X(j\omega)| \cdot e^{j\phi(\omega)}$&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;幅度谱&lt;/strong&gt; $|X(j\omega)|$ 和 &lt;strong&gt;相位谱&lt;/strong&gt; $\phi(\omega)$&lt;/p&gt;
 &lt;p&gt;算出来的 $F(\omega)$ 的值（模长），就代表了在该频率 $\omega$ 下，信号的能量或强度有多大&lt;/p&gt;
 &lt;h4 id=&#34;经典例题&#34;&gt;经典例题
 &lt;/h4&gt;&lt;h5 id=&#34;1-e-atut-stackrelftlongleftrightarrow-frac1a--jomega--a--0&#34;&gt;1. $e^{-at}u(t) \stackrel{FT}{\longleftrightarrow} \frac{1}{a + j\omega}$  $a &amp;gt; 0$
@@ -1077,6 +1079,102 @@ $e^{-j\omega_0 t} \xrightarrow{F} 2\pi\delta(\omega + \omega_0)$&lt;/p&gt;
 &lt;p&gt;4.化简&lt;/p&gt;
 &lt;p&gt;$= \frac{\pi}{j} [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$&lt;/p&gt;
 &lt;p&gt;$= -j\pi [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$&lt;/p&gt;
+&lt;h4 id=&#34;傅里叶变换的基本性质&#34;&gt;傅里叶变换的基本性质
+&lt;/h4&gt;&lt;h5 id=&#34;1傅里叶变换线性性质&#34;&gt;1.傅里叶变换线性性质
+&lt;/h5&gt;&lt;p&gt;若 $x_1(t) \xrightarrow{F} X_1(j\omega)$，$x_2(t) \xrightarrow{F} X_2(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $ax_1(t) + bx_2(t) \xrightarrow{F} aX_1(j\omega) + bX_2(j\omega)$ (积分线性性质)&lt;/p&gt;
+&lt;h5 id=&#34;2傅里叶变换时移性质&#34;&gt;2.傅里叶变换时移性质
+&lt;/h5&gt;&lt;p&gt;若 $x(t) \xrightarrow{F} X(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $x(t-t_0) \xrightarrow{F} X(j\omega)e^{-j\omega t_0}$&lt;/p&gt;
+&lt;p&gt;例&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511271757932.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;3傅里叶变换频移性质&#34;&gt;3.傅里叶变换频移性质
+&lt;/h5&gt;&lt;p&gt;若 $x(t) \xrightarrow{F} X(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $x(t)e^{j\omega_0 t} \xrightarrow{F} X(j(\omega - \omega_0))$&lt;/p&gt;
+&lt;p&gt;例&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011710168.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251201171047955&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;4傅里叶变换时域微分性质&#34;&gt;4.傅里叶变换时域微分性质
+&lt;/h5&gt;&lt;p&gt;若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $\frac{dx(t)}{dt} \stackrel{F}{\longrightarrow} j\omega X(j\omega)$&lt;/p&gt;
+&lt;p&gt;例&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011717277.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251201171709012&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;5傅里叶变换频域微分性质&#34;&gt;5.傅里叶变换频域微分性质
+&lt;/h5&gt;&lt;p&gt;若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $t x(t) \stackrel{F}{\longrightarrow} j \frac{dX(j\omega)}{d\omega}$&lt;/p&gt;
+&lt;h5 id=&#34;6傅里叶变换时域卷积性质重要&#34;&gt;6.傅里叶变换时域卷积性质（重要）
+&lt;/h5&gt;&lt;p&gt;若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega), \quad h(t) \stackrel{F}{\longrightarrow} H(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $x(t) * h(t) \stackrel{F}{\longrightarrow} X(j\omega)H(j\omega)$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(时域卷积等于频域相乘)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011742335.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0372(20251201-174205)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011818186.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0373(20251201-181832)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011825912.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0374(20251201-182522)&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;7傅里叶变换时域积分性质&#34;&gt;7.傅里叶变换时域积分性质
+&lt;/h5&gt;&lt;p&gt;若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$&lt;/p&gt;
+&lt;p&gt;则$\int_{-\infty}^{t} x(\tau) d\tau \stackrel{F}{\longrightarrow} \frac{X(j\omega)}{j\omega} + \pi X(0)\delta(\omega)$&lt;/p&gt;
+&lt;h5 id=&#34;8调制性质&#34;&gt;8.调制性质
+&lt;/h5&gt;&lt;p&gt;若 $x_1(t) \stackrel{F}{\longrightarrow} X_1(j\omega), \quad x_2(t) \stackrel{F}{\longrightarrow} X_2(j\omega)$&lt;/p&gt;
+&lt;p&gt;则 $x_1(t) x_2(t) \stackrel{F}{\longrightarrow} \frac{1}{2\pi} X_1(j\omega) * X_2(j\omega)$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(时域相乘等于频域卷积)&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;用傅里叶变换时域卷积性质计算信号卷积&#34;&gt;用傅里叶变换时域卷积性质计算信号卷积
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512012107847.PNG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;IMG_0375(20251201-210638)&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>

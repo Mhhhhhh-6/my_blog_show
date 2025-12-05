@@ -819,6 +819,12 @@ $$f(t) = \mathcal{F}^{-1}[F(\omega)] = \frac{1}{2\pi} \int_{-\infty}^{+\infty} F
 
 $f(t)$ 描述的是信号**在不同时刻发生了什么**。 $F(\omega)$ 描述的是信号**由哪些频率成分组成**。
 
+$X(j\omega) = |X(j\omega)| \cdot e^{j\phi(\omega)}$
+
+其中**幅度谱** $|X(j\omega)|$ 和 **相位谱** $\phi(\omega)$
+
+
+
 算出来的 $F(\omega)$ 的值（模长），就代表了在该频率 $\omega$ 下，信号的能量或强度有多大
 
 #### 经典例题
@@ -916,3 +922,72 @@ $= \frac{\pi}{j} [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$
 
 $= -j\pi [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$
 
+#### 傅里叶变换的基本性质
+
+##### 1.傅里叶变换线性性质
+
+若 $x_1(t) \xrightarrow{F} X_1(j\omega)$，$x_2(t) \xrightarrow{F} X_2(j\omega)$
+
+则 $ax_1(t) + bx_2(t) \xrightarrow{F} aX_1(j\omega) + bX_2(j\omega)$ (积分线性性质)
+
+##### 2.傅里叶变换时移性质
+
+若 $x(t) \xrightarrow{F} X(j\omega)$
+
+则 $x(t-t_0) \xrightarrow{F} X(j\omega)e^{-j\omega t_0}$
+
+例![](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511271757932.png)
+
+##### 3.傅里叶变换频移性质
+
+若 $x(t) \xrightarrow{F} X(j\omega)$
+
+则 $x(t)e^{j\omega_0 t} \xrightarrow{F} X(j(\omega - \omega_0))$
+
+例![image-20251201171047955](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011710168.png)
+
+##### 4.傅里叶变换时域微分性质
+
+若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$
+
+则 $\frac{dx(t)}{dt} \stackrel{F}{\longrightarrow} j\omega X(j\omega)$
+
+例![image-20251201171709012](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011717277.png)
+
+##### 5.傅里叶变换频域微分性质
+
+若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$
+
+则 $t x(t) \stackrel{F}{\longrightarrow} j \frac{dX(j\omega)}{d\omega}$
+
+##### 6.傅里叶变换时域卷积性质（重要）
+
+若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega), \quad h(t) \stackrel{F}{\longrightarrow} H(j\omega)$
+
+则 $x(t) * h(t) \stackrel{F}{\longrightarrow} X(j\omega)H(j\omega)$
+
+**(时域卷积等于频域相乘)**
+
+![IMG_0372(20251201-174205)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011742335.PNG)
+
+![IMG_0373(20251201-181832)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011818186.PNG)
+
+![IMG_0374(20251201-182522)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011825912.PNG)
+
+##### 7.傅里叶变换时域积分性质
+
+若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$
+
+则$\int_{-\infty}^{t} x(\tau) d\tau \stackrel{F}{\longrightarrow} \frac{X(j\omega)}{j\omega} + \pi X(0)\delta(\omega)$
+
+##### 8.调制性质
+
+若 $x_1(t) \stackrel{F}{\longrightarrow} X_1(j\omega), \quad x_2(t) \stackrel{F}{\longrightarrow} X_2(j\omega)$
+
+则 $x_1(t) x_2(t) \stackrel{F}{\longrightarrow} \frac{1}{2\pi} X_1(j\omega) * X_2(j\omega)$
+
+**(时域相乘等于频域卷积)**
+
+#### 用傅里叶变换时域卷积性质计算信号卷积
+
+![IMG_0375(20251201-210638)](https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512012107847.PNG)

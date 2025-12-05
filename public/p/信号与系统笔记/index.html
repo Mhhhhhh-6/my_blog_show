@@ -422,6 +422,8 @@
         <li><a href="#34连续时间周期信号的傅里叶变换">3.4连续时间周期信号的傅里叶变换</a>
           <ol>
             <li><a href="#经典例题">经典例题</a></li>
+            <li><a href="#傅里叶变换的基本性质">傅里叶变换的基本性质</a></li>
+            <li><a href="#用傅里叶变换时域卷积性质计算信号卷积">用傅里叶变换时域卷积性质计算信号卷积</a></li>
           </ol>
         </li>
       </ol>
@@ -502,7 +504,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 158 分钟
+                    阅读时长: 164 分钟
                 </time>
             </div>
         
@@ -1431,6 +1433,8 @@ $$f(t) = \mathcal{F}^{-1}[F(\omega)] = \frac{1}{2\pi} \int_{-\infty}^{+\infty} F
 <p>实际上 傅里叶变换就是拿着未知信号f(t)和各个$k\omega_0$的复指数信号$e^{j\omega t}$ 做内积</p>
 <p>内积越大 相似程度越高 说明有越多的该基信号 以此 便展示了频域</p>
 <p>$f(t)$ 描述的是信号<strong>在不同时刻发生了什么</strong>。 $F(\omega)$ 描述的是信号<strong>由哪些频率成分组成</strong>。</p>
+<p>$X(j\omega) = |X(j\omega)| \cdot e^{j\phi(\omega)}$</p>
+<p>其中<strong>幅度谱</strong> $|X(j\omega)|$ 和 <strong>相位谱</strong> $\phi(\omega)$</p>
 <p>算出来的 $F(\omega)$ 的值（模长），就代表了在该频率 $\omega$ 下，信号的能量或强度有多大</p>
 <h4 id="经典例题">经典例题
 </h4><h5 id="1-e-atut-stackrelftlongleftrightarrow-frac1a--jomega--a--0">1. $e^{-at}u(t) \stackrel{FT}{\longleftrightarrow} \frac{1}{a + j\omega}$  $a &gt; 0$
@@ -1581,6 +1585,102 @@ $e^{-j\omega_0 t} \xrightarrow{F} 2\pi\delta(\omega + \omega_0)$</p>
 <p>4.化简</p>
 <p>$= \frac{\pi}{j} [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$</p>
 <p>$= -j\pi [\delta(\omega - \omega_0) - \delta(\omega + \omega_0)]$</p>
+<h4 id="傅里叶变换的基本性质">傅里叶变换的基本性质
+</h4><h5 id="1傅里叶变换线性性质">1.傅里叶变换线性性质
+</h5><p>若 $x_1(t) \xrightarrow{F} X_1(j\omega)$，$x_2(t) \xrightarrow{F} X_2(j\omega)$</p>
+<p>则 $ax_1(t) + bx_2(t) \xrightarrow{F} aX_1(j\omega) + bX_2(j\omega)$ (积分线性性质)</p>
+<h5 id="2傅里叶变换时移性质">2.傅里叶变换时移性质
+</h5><p>若 $x(t) \xrightarrow{F} X(j\omega)$</p>
+<p>则 $x(t-t_0) \xrightarrow{F} X(j\omega)e^{-j\omega t_0}$</p>
+<p>例<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202511271757932.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h5 id="3傅里叶变换频移性质">3.傅里叶变换频移性质
+</h5><p>若 $x(t) \xrightarrow{F} X(j\omega)$</p>
+<p>则 $x(t)e^{j\omega_0 t} \xrightarrow{F} X(j(\omega - \omega_0))$</p>
+<p>例<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011710168.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251201171047955"
+	
+	
+></p>
+<h5 id="4傅里叶变换时域微分性质">4.傅里叶变换时域微分性质
+</h5><p>若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$</p>
+<p>则 $\frac{dx(t)}{dt} \stackrel{F}{\longrightarrow} j\omega X(j\omega)$</p>
+<p>例<img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011717277.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20251201171709012"
+	
+	
+></p>
+<h5 id="5傅里叶变换频域微分性质">5.傅里叶变换频域微分性质
+</h5><p>若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$</p>
+<p>则 $t x(t) \stackrel{F}{\longrightarrow} j \frac{dX(j\omega)}{d\omega}$</p>
+<h5 id="6傅里叶变换时域卷积性质重要">6.傅里叶变换时域卷积性质（重要）
+</h5><p>若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega), \quad h(t) \stackrel{F}{\longrightarrow} H(j\omega)$</p>
+<p>则 $x(t) * h(t) \stackrel{F}{\longrightarrow} X(j\omega)H(j\omega)$</p>
+<p><strong>(时域卷积等于频域相乘)</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011742335.PNG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="IMG_0372(20251201-174205)"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011818186.PNG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="IMG_0373(20251201-181832)"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512011825912.PNG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="IMG_0374(20251201-182522)"
+	
+	
+></p>
+<h5 id="7傅里叶变换时域积分性质">7.傅里叶变换时域积分性质
+</h5><p>若 $x(t) \stackrel{F}{\longrightarrow} X(j\omega)$</p>
+<p>则$\int_{-\infty}^{t} x(\tau) d\tau \stackrel{F}{\longrightarrow} \frac{X(j\omega)}{j\omega} + \pi X(0)\delta(\omega)$</p>
+<h5 id="8调制性质">8.调制性质
+</h5><p>若 $x_1(t) \stackrel{F}{\longrightarrow} X_1(j\omega), \quad x_2(t) \stackrel{F}{\longrightarrow} X_2(j\omega)$</p>
+<p>则 $x_1(t) x_2(t) \stackrel{F}{\longrightarrow} \frac{1}{2\pi} X_1(j\omega) * X_2(j\omega)$</p>
+<p><strong>(时域相乘等于频域卷积)</strong></p>
+<h4 id="用傅里叶变换时域卷积性质计算信号卷积">用傅里叶变换时域卷积性质计算信号卷积
+</h4><p><img src="https://cdn.jsdelivr.net/gh/Mhhhhhh-6/my_blog_img@main/202512012107847.PNG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="IMG_0375(20251201-210638)"
+	
+	
+></p>
 
 </section>
 
